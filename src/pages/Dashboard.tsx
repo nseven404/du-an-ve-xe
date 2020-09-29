@@ -8,7 +8,7 @@ import Sidebar from '../components/Sidebar';
 class Dashboard extends Component {
     render() {
         return (
-            <div className="g-sidenav-show g-sidenav-pinned">
+            <div >
                 <Sidebar></Sidebar>
                 <NavbarDashboard></NavbarDashboard>
                 <HeaderDashboard></HeaderDashboard>
