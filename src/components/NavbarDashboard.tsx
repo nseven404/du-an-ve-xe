@@ -1,17 +1,29 @@
 import React, { Component } from 'react';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import LaunchIcon from '@material-ui/icons/Launch';
-class NavbarDashboard extends Component {
-    openThongBao = () => {
-        document.body.classList.add("show");
-        setTimeout(function() {
-          document.body.classList.remove("show");
-          document.body.classList.add("show");
-        }, 150);
-        setTimeout(function() {
-          document.body.classList.add("show");
-        }, 300);
-      };
+class NavbarDashboard extends Component<Props , State> {
+    constructor(props : any) {
+        super(props);
+        this.state = {
+            showNav : true
+        }
+        
+    }
+
+
+    onShowNav (){
+        this.setState({showNav : !this.state.showNav})
+    }
+    // openThongBao = () => {
+    //     document.body.classList.add("show");
+    //     setTimeout(function() {
+    //       document.body.classList.remove("show");
+    //       document.body.classList.add("show");
+    //     }, 150);
+    //     setTimeout(function() {
+    //       document.body.classList.add("show");
+    //     }, 300);
+    //   };
       // function that on mobile devices makes the search open
   openSearch = () => {
     document.body.classList.add("g-navbar-search-showing");
@@ -233,7 +245,11 @@ class NavbarDashboard extends Component {
                                     </div>
                                 </li>
                             </ul>
-                            <ul className="navbar-nav align-items-center ml-auto ml-md-0">
+                            <ul className="navbar-nav align-items-center ml-auto ml-md-0"
+                            onClick={(event)=>{
+                                this.onShowNav()
+                            }}
+                            >
                                 <li className="nav-item dropdown">
                                     <a className="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <div className="media align-items-center">
@@ -245,7 +261,9 @@ class NavbarDashboard extends Component {
                                             </div>
                                         </div>
                                     </a>
-                                    <div className="dropdown-menu dropdown-menu-right show">
+                                    <div className={(this.state.showNav) ? "dropdown-menu dropdown-menu-right" : "dropdown-menu dropdown-menu-right show"} 
+                                    
+                                    >
                                         <div className="dropdown-header noti-title">
                                             <h6 className="text-overflow m-0">Welcome!</h6>
                                         </div>
@@ -279,6 +297,11 @@ class NavbarDashboard extends Component {
             </div>
         );
     }
+}
+
+type Props ={}
+type State = {
+    showNav : boolean
 }
 
 export default NavbarDashboard;
