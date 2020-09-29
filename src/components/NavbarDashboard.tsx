@@ -1,55 +1,29 @@
 import React, { Component } from 'react';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import LaunchIcon from '@material-ui/icons/Launch';
-class NavbarDashboard extends Component<Props , State> {
-    constructor(props : any) {
+import PersonIcon from '@material-ui/icons/Person';
+import SettingsIcon from '@material-ui/icons/Settings';
+import EventNoteIcon from '@material-ui/icons/EventNote';
+import HelpIcon from '@material-ui/icons/Help';
+import DirectionsRunIcon from '@material-ui/icons/DirectionsRun';
+import EmailIcon from '@material-ui/icons/Email';
+import CreditCardIcon from '@material-ui/icons/CreditCard';
+import ReportIcon from '@material-ui/icons/Report';
+import LocationOnIcon from '@material-ui/icons/LocationOn';
+import StorefrontIcon from '@material-ui/icons/Storefront';
+
+class NavbarDashboard extends Component<Props, State> {
+    constructor(props: any) {
         super(props);
         this.state = {
-            showNav : true
+            showNav: true,
+            showNav1: true,
+            showNav2: true
         }
-        
-    }
-
-
-    onShowNav (){
-        this.setState({showNav : !this.state.showNav})
-    }
-    // openThongBao = () => {
-    //     document.body.classList.add("show");
-    //     setTimeout(function() {
-    //       document.body.classList.remove("show");
-    //       document.body.classList.add("show");
-    //     }, 150);
-    //     setTimeout(function() {
-    //       document.body.classList.add("show");
-    //     }, 300);
-    //   };
-      // function that on mobile devices makes the search open
-  openSearch = () => {
-    document.body.classList.add("g-navbar-search-showing");
-    setTimeout(function() {
-      document.body.classList.remove("g-navbar-search-showing");
-      document.body.classList.add("g-navbar-search-show");
-    }, 150);
-    setTimeout(function() {
-      document.body.classList.add("g-navbar-search-shown");
-    }, 300);
-  };
-  // function that on mobile devices makes the search close
-  closeSearch = () => {
-    document.body.classList.remove("g-navbar-search-shown");
-    setTimeout(function() {
-      document.body.classList.remove("g-navbar-search-show");
-      document.body.classList.add("g-navbar-search-hiding");
-    }, 150);
-    setTimeout(function() {
-      document.body.classList.remove("g-navbar-search-hiding");
-      document.body.classList.add("g-navbar-search-hidden");
-    }, 300);
-    setTimeout(function() {
-      document.body.classList.remove("g-navbar-search-hidden");
-    }, 500);
-  };
+    };
+    onShowNav = () => {
+        this.setState({ showNav: !this.state.showNav });
+    };
     render() {
         return (
             <div className="main-content" id="panel">
@@ -67,12 +41,17 @@ class NavbarDashboard extends Component<Props , State> {
                                         <input className="form-control" placeholder="Tìm kiếm" type="text" />
                                     </div>
                                 </div>
-                                <button type="button" className="close" data-action="search-close" data-target="#navbar-search-main" aria-label="Close" onClick={this.closeSearch}>
+                                <button type="button" className="close" data-action="search-close" data-target="#navbar-search-main" aria-label="Close">
                                     <span aria-hidden="true">×</span>
                                 </button>
                             </form>
                             {/*  Navbar links */}
-                            <ul className="navbar-nav align-items-center ml-md-auto">
+                            <ul className="navbar-nav align-items-center ml-md-auto" onClick={(event) => {
+
+                                this.setState({ showNav2: !this.state.showNav2 });
+
+
+                            }}>
                                 <li className="nav-item d-xl-none">
                                     {/* Sidenav toggler */}
                                     <div className="pr-3 sidenav-toggler sidenav-toggler-dark" data-action="sidenav-pin" data-target="#sidenav-main">
@@ -90,12 +69,12 @@ class NavbarDashboard extends Component<Props , State> {
                                 </li>
                                 <li className="nav-item dropdown">
                                     <a className="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <NotificationsIcon/>
+                                        <NotificationsIcon />
                                     </a>
-                                    <div className="dropdown-menu dropdown-menu-xl dropdown-menu-right py-0 overflow-hidden">
+                                    <div className={this.state.showNav2 ? "dropdown-menu dropdown-menu-xl dropdown-menu-right py-0 overflow-hidden" : "dropdown-menu dropdown-menu-xl dropdown-menu-right py-0 overflow-hidden show"}>
                                         {/* Dropdown header */}
                                         <div className="px-3 py-3">
-                                            <h6 className="text-sm text-muted m-0">You have <strong className="text-primary">13</strong> notifications.</h6>
+                                            <h6 className="text-sm text-muted m-0">Bạn có <strong className="text-primary">13</strong> thông báo.</h6>
                                         </div>
                                         {/* List group */}
                                         <div className="list-group list-group-flush">
@@ -103,26 +82,7 @@ class NavbarDashboard extends Component<Props , State> {
                                                 <div className="row align-items-center">
                                                     <div className="col-auto">
                                                         {/* Avatar */}
-                                                        <img alt="Image placeholder" src="../../assets/img/theme/team-1.jpg" className="avatar rounded-circle" />
-                                                    </div>
-                                                    <div className="col ml--2">
-                                                        <div className="d-flex justify-content-between align-items-center">
-                                                            <div>
-                                                                <h4 className="mb-0 text-sm">John Snow</h4>
-                                                            </div>
-                                                            <div className="text-right text-muted">
-                                                                <small>2 hrs ago</small>
-                                                            </div>
-                                                        </div>
-                                                        <p className="text-sm mb-0">Let's meet at Starbucks at 11:30. Wdyt?</p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <a href="#!" className="list-group-item list-group-item-action">
-                                                <div className="row align-items-center">
-                                                    <div className="col-auto">
-                                                        {/* Avatar */}
-                                                        <img alt="Image placeholder" src="../../assets/img/theme/team-2.jpg" className="avatar rounded-circle" />
+                                                        <img alt="Image placeholder" src="/images/huynhvannam.jpg" className="avatar rounded-circle" />
                                                     </div>
                                                     <div className="col ml--2">
                                                         <div className="d-flex justify-content-between align-items-center">
@@ -130,29 +90,10 @@ class NavbarDashboard extends Component<Props , State> {
                                                                 <h4 className="mb-0 text-sm">Huỳnh Văn Nam</h4>
                                                             </div>
                                                             <div className="text-right text-muted">
-                                                                <small>3 hrs ago</small>
+                                                                <small>2 giờ trước</small>
                                                             </div>
                                                         </div>
-                                                        <p className="text-sm mb-0">A new issue has been reported for Argon.</p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <a href="#!" className="list-group-item list-group-item-action">
-                                                <div className="row align-items-center">
-                                                    <div className="col-auto">
-                                                        {/* Avatar */}
-                                                        <img alt="Image placeholder" src="../../assets/img/theme/team-3.jpg" className="avatar rounded-circle" />
-                                                    </div>
-                                                    <div className="col ml--2">
-                                                        <div className="d-flex justify-content-between align-items-center">
-                                                            <div>
-                                                                <h4 className="mb-0 text-sm">Huỳnh Văn Nam</h4>
-                                                            </div>
-                                                            <div className="text-right text-muted">
-                                                                <small>5 hrs ago</small>
-                                                            </div>
-                                                        </div>
-                                                        <p className="text-sm mb-0">Your posts have been liked a lot.</p>
+                                                        <p className="text-sm mb-0">Tôi muốn gặp bạn?</p>
                                                     </div>
                                                 </div>
                                             </a>
@@ -168,10 +109,10 @@ class NavbarDashboard extends Component<Props , State> {
                                                                 <h4 className="mb-0 text-sm">Huỳnh Văn Nam</h4>
                                                             </div>
                                                             <div className="text-right text-muted">
-                                                                <small>2 hrs ago</small>
+                                                                <small>3 giờ trước</small>
                                                             </div>
                                                         </div>
-                                                        <p className="text-sm mb-0">Let's meet at Starbucks at 11:30. Wdyt?</p>
+                                                        <p className="text-sm mb-0">Tôi muốn gặp bạn?</p>
                                                     </div>
                                                 </div>
                                             </a>
@@ -187,57 +128,99 @@ class NavbarDashboard extends Component<Props , State> {
                                                                 <h4 className="mb-0 text-sm">Huỳnh Văn Nam</h4>
                                                             </div>
                                                             <div className="text-right text-muted">
-                                                                <small>3 hrs ago</small>
+                                                                <small>5 giờ trước</small>
                                                             </div>
                                                         </div>
-                                                        <p className="text-sm mb-0">A new issue has been reported for Argon.</p>
+                                                        <p className="text-sm mb-0">Tôi muốn gặp bạn?</p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a href="#!" className="list-group-item list-group-item-action">
+                                                <div className="row align-items-center">
+                                                    <div className="col-auto">
+                                                        {/* Avatar */}
+                                                        <img alt="Image placeholder" src="/images/huynhvannam.jpg" className="avatar rounded-circle" />
+                                                    </div>
+                                                    <div className="col ml--2">
+                                                        <div className="d-flex justify-content-between align-items-center">
+                                                            <div>
+                                                                <h4 className="mb-0 text-sm">Huỳnh Văn Nam</h4>
+                                                            </div>
+                                                            <div className="text-right text-muted">
+                                                                <small>2 giờ trước</small>
+                                                            </div>
+                                                        </div>
+                                                        <p className="text-sm mb-0">Tôi muốn gặp bạn?</p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a href="#!" className="list-group-item list-group-item-action">
+                                                <div className="row align-items-center">
+                                                    <div className="col-auto">
+                                                        {/* Avatar */}
+                                                        <img alt="Image placeholder" src="/images/huynhvannam.jpg" className="avatar rounded-circle" />
+                                                    </div>
+                                                    <div className="col ml--2">
+                                                        <div className="d-flex justify-content-between align-items-center">
+                                                            <div>
+                                                                <h4 className="mb-0 text-sm">Huỳnh Văn Nam</h4>
+                                                            </div>
+                                                            <div className="text-right text-muted">
+                                                                <small>3 giờ trước </small>
+                                                            </div>
+                                                        </div>
+                                                        <p className="text-sm mb-0">Tôi muốn gặp bạn?</p>
                                                     </div>
                                                 </div>
                                             </a>
                                         </div>
                                         {/* View all */}
-                                        <a href="#!" className="dropdown-item text-center text-primary font-weight-bold py-3">View all</a>
+                                        <a href="#!" className="dropdown-item text-center text-primary font-weight-bold py-3">Xem tất cả</a>
                                     </div>
                                 </li>
-                                <li className="nav-item dropdown">
+                                <li className="nav-item dropdown" onClick={(event) => {
+
+                                    this.setState({ showNav1: !this.state.showNav1 });
+
+                                }}>
                                     <a className="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <LaunchIcon/>
+                                        <LaunchIcon />
                                     </a>
-                                    <div className="dropdown-menu dropdown-menu-lg dropdown-menu-dark bg-default dropdown-menu-right">
+                                    <div className={this.state.showNav1 ? "dropdown-menu dropdown-menu-lg dropdown-menu-dark bg-default dropdown-menu-right" : "dropdown-menu dropdown-menu-lg dropdown-menu-dark bg-default dropdown-menu-right show"}>
                                         <div className="row shortcuts px-4">
                                             <a href="#!" className="col-4 shortcut-item">
                                                 <span className="shortcut-media avatar rounded-circle bg-gradient-red">
-                                                    <i className="ni ni-calendar-grid-58"></i>
+                                                    <EventNoteIcon/>
                                                 </span>
-                                                <small>Calendar</small>
+                                                <small>Lịch</small>
                                             </a>
                                             <a href="#!" className="col-4 shortcut-item">
                                                 <span className="shortcut-media avatar rounded-circle bg-gradient-orange">
-                                                    <i className="ni ni-email-83"></i>
+                                                    <EmailIcon/>
                                                 </span>
                                                 <small>Email</small>
                                             </a>
                                             <a href="#!" className="col-4 shortcut-item">
                                                 <span className="shortcut-media avatar rounded-circle bg-gradient-info">
-                                                    <i className="ni ni-credit-card"></i>
+                                                    <CreditCardIcon/>
                                                 </span>
-                                                <small>Payments</small>
+                                                <small>Thanh toán</small>
                                             </a>
                                             <a href="#!" className="col-4 shortcut-item">
                                                 <span className="shortcut-media avatar rounded-circle bg-gradient-green">
-                                                    <i className="ni ni-books"></i>
+                                                    <ReportIcon/>
                                                 </span>
-                                                <small>Reports</small>
+                                                <small>Báo cáo</small>
                                             </a>
                                             <a href="#!" className="col-4 shortcut-item">
                                                 <span className="shortcut-media avatar rounded-circle bg-gradient-purple">
-                                                    <i className="ni ni-pin-3"></i>
+                                                    <LocationOnIcon/>
                                                 </span>
-                                                <small>Maps</small>
+                                                <small>Bản đồ</small>
                                             </a>
                                             <a href="#!" className="col-4 shortcut-item">
                                                 <span className="shortcut-media avatar rounded-circle bg-gradient-yellow">
-                                                    <i className="ni ni-basket"></i>
+                                                    <StorefrontIcon/>
                                                 </span>
                                                 <small>Shop</small>
                                             </a>
@@ -246,9 +229,9 @@ class NavbarDashboard extends Component<Props , State> {
                                 </li>
                             </ul>
                             <ul className="navbar-nav align-items-center ml-auto ml-md-0"
-                            onClick={(event)=>{
-                                this.onShowNav()
-                            }}
+                                onClick={(event) => {
+                                    this.onShowNav();
+                                }}
                             >
                                 <li className="nav-item dropdown">
                                     <a className="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -261,32 +244,30 @@ class NavbarDashboard extends Component<Props , State> {
                                             </div>
                                         </div>
                                     </a>
-                                    <div className={(this.state.showNav) ? "dropdown-menu dropdown-menu-right" : "dropdown-menu dropdown-menu-right show"} 
-                                    
-                                    >
+                                    <div className={(this.state.showNav) ? "dropdown-menu dropdown-menu-right" : "dropdown-menu dropdown-menu-right show"}>
                                         <div className="dropdown-header noti-title">
-                                            <h6 className="text-overflow m-0">Welcome!</h6>
+                                            <h6 className="text-overflow m-0">Xin chào!</h6>
                                         </div>
                                         <a href="#!" className="dropdown-item">
-                                            <i className="ni ni-single-02"></i>
-                                            <span>My profile</span>
+                                            <PersonIcon style={{ fontSize: "20px" }} />
+                                            <span>Thông tin của tôi</span>
                                         </a>
                                         <a href="#!" className="dropdown-item">
-                                            <i className="ni ni-settings-gear-65"></i>
-                                            <span>Settings</span>
+                                            <SettingsIcon style={{ fontSize: "20px" }} />
+                                            <span>Cài đặt</span>
                                         </a>
                                         <a href="#!" className="dropdown-item">
-                                            <i className="ni ni-calendar-grid-58"></i>
-                                            <span>Activity</span>
+                                            <EventNoteIcon style={{ fontSize: "20px" }} />
+                                            <span>Hoạt động</span>
                                         </a>
                                         <a href="#!" className="dropdown-item">
-                                            <i className="ni ni-support-16"></i>
-                                            <span>Support</span>
+                                            <HelpIcon style={{ fontSize: "20px" }} />
+                                            <span>Hỗ trợ</span>
                                         </a>
                                         <div className="dropdown-divider"></div>
                                         <a href="#!" className="dropdown-item">
-                                            <i className="ni ni-user-run"></i>
-                                            <span>Logout</span>
+                                            <DirectionsRunIcon style={{ fontSize: "20px" }} />
+                                            <span>Đăng xuất</span>
                                         </a>
                                     </div>
                                 </li>
@@ -299,9 +280,11 @@ class NavbarDashboard extends Component<Props , State> {
     }
 }
 
-type Props ={}
+type Props = {}
 type State = {
-    showNav : boolean
+    showNav: boolean,
+    showNav1: boolean,
+    showNav2: boolean
 }
 
 export default NavbarDashboard;
