@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import FooterDashboard from '../components/FooterDashboard';
 import HeaderDashboard from '../components/HeaderDashboard';
-import MainDashboard from '../components/MainDashboard';
 import NavbarDashboard from '../components/NavbarDashboard';
 import Sidebar from '../components/Sidebar';
-import Thongke from '../components/Thongke';
+import Tables from '../components/Tables';
 
-class Dashboard extends Component{
+class NhanVien extends Component {
 
     render() {
         return (
@@ -16,14 +15,11 @@ class Dashboard extends Component{
                     <NavbarDashboard></NavbarDashboard >
                     <div className="header bg-primary pb-6">
                         <div className="container-fluid">
-                            <div className="header-body">
-                                <HeaderDashboard></HeaderDashboard>
-                                <Thongke></Thongke>
-                            </div>
+                        <HeaderDashboard></HeaderDashboard>
                         </div>
                     </div>
                     <div className="container-fluid mt--6">
-                        <MainDashboard></MainDashboard>
+                        <Tables></Tables>
                         <FooterDashboard></FooterDashboard>
                     </div>
                 </div>
@@ -32,5 +28,4 @@ class Dashboard extends Component{
     }
 }
 
-
-export default Dashboard;
+export default NhanVien;

@@ -6323,6 +6323,7 @@ a.close.disabled {
     width: 100%;
     height: 100%;
     outline: 0;
+    background: rgba(0, 0, 0, 0.6);
 }
 
 .modal-dialog {
@@ -17683,11 +17684,12 @@ textarea[resize='horizontal'] {
     position: relative;
 }
 
-.navbar-vertical .navbar-nav .nav-link>i {
+.navbar-vertical .navbar-nav .nav-link>path {
     font-size: .9375rem;
     line-height: 1.5rem;
     min-width: 2rem;
 }
+
 
 .navbar-vertical .navbar-nav .nav-link .dropdown-menu {
     border: none;
@@ -24295,4 +24297,12 @@ html:not([dir='rtl']) .noUi-horizontal .noUi-handle {
 
 .swal2-popup .swal2-image {
     max-width: 200px;
+}
+
+.show-dialog{
+    display: block;
+}
+
+.hidden-dialog{
+    display: none;
 }

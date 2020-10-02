@@ -1,32 +1,52 @@
 import React, { Component } from 'react';
+import HomeIcon from '@material-ui/icons/Home';
+import AssignmentIndIcon from '@material-ui/icons/AssignmentInd';
+import { Link } from 'react-router-dom';
 
 class Sidebar extends Component<Props, State> {
-  constructor(props:any) {
+  constructor(props: any) {
     super(props);
     this.state = {
-      sidebar: false
+      sidenavOpen: true
     }
   }
-  
-  onClickOpenSidebar = () => {
-    this.setState({
-      sidebar: !this.state.sidebar
-    })
+
+  onClickSideNavOpen = () => {
+    this.setState({ sidenavOpen: !this.state.sidenavOpen });
+    if (!document.body.classList.contains("g-sidenav-pinned")) {
+      document.body.classList.add("g-sidenav-pinned");
+    } else {
+      document.body.classList.remove("g-sidenav-pinned");
+    }
   }
-  
+
+  // makes the sidenav normal on hover (actually when mouse enters on it)
+  onMouseEnterSidenav = () => {
+    if (!document.body.classList.contains("g-sidenav-pinned")) {
+      document.body.classList.add("g-sidenav-show");
+    }
+  };
+  // làm cho sidenav nhỏ khi di chuột (thực sự khi chuột rời khỏi nó)
+  onMouseLeaveSidenav = () => {
+    if (!document.body.classList.contains("g-sidenav-pinned")) {
+      document.body.classList.remove("g-sidenav-show");
+    }
+  };
+
   render() {
     return (
       /* Sidenav */
-      <nav className="sidenav navbar navbar-vertical fixed-left navbar-expand-xs navbar-light bg-white" id="sidenav-main" onClick = {this.onClickOpenSidebar}>
-        <div className="scrollbar-inner">
+      <nav className="sidenav navbar navbar-vertical fixed-left navbar-expand-xs navbar-light bg-white" id="sidenav-main">
+        <div className="scrollbar-inner scroll-wrapper">
           {/* Brand */}
           <div className="sidenav-header d-flex align-items-center">
-            <a className="navbar-brand" href="../../pages/dashboards/dashboard.html">
-              <img src="../../assets/img/brand/blue.png" className="navbar-brand-img" alt="..." />
-            </a>
+            <Link className="navbar-brand" to="/dashboard">
+              <img src="/images/blue.png" className="navbar-brand-img" alt="..." />
+            </Link>
             <div className="ml-auto">
               {/* Sidenav toggler */}
-              <div className="sidenav-toggler d-none d-xl-block" data-action="sidenav-unpin" data-target="#sidenav-main">
+              <div className={this.state.sidenavOpen ? "sidenav-toggler d-none d-xl-block" : "sidenav-toggler d-none d-xl-block active"} data-action="sidenav-unpin" data-target="#sidenav-main" onClick={this.onClickSideNavOpen} onMouseEnter={this.onMouseEnterSidenav}
+                onMouseLeave={this.onMouseLeaveSidenav}>
                 <div className="sidenav-toggler-inner">
                   <i className="sidenav-toggler-line"></i>
                   <i className="sidenav-toggler-line"></i>
@@ -41,154 +61,18 @@ class Sidebar extends Component<Props, State> {
               {/* Nav items  */}
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <a className="nav-link active" href="#navbar-dashboards" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-dashboards">
-                    <i className="ni ni-shop text-primary"></i>
-                    <span className="nav-link-text">Dashboards</span>
-                  </a>
-                  <div className="collapse show" id="navbar-dashboards">
-                    <ul className="nav nav-sm flex-column">
-                      <li className="nav-item">
-                        <a href="../../pages/dashboards/dashboard.html" className="nav-link">Dashboard</a>
-                      </li>
-                      <li className="nav-item">
-                        <a href="../../pages/dashboards/alternative.html" className="nav-link">Alternative</a>
-                      </li>
-                    </ul>
-                  </div>
+                  <Link className="nav-link active collapsed" to="/dashboard" aria-controls="navbar-dashboards">
+                    <HomeIcon className="text-primary" style = {{fontSize: "18px"}}/>
+                    <span className="nav-link-text" style = {{marginLeft: "22px"}}>Trang chủ</span>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#navbar-examples" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-examples">
-                    <i className="ni ni-ungroup text-orange"></i>
-                    <span className="nav-link-text">Examples</span>
-                  </a>
-                  <div className="collapse" id="navbar-examples">
-                    <ul className="nav nav-sm flex-column">
-                      <li className="nav-item">
-                        <a href="../../pages/examples/pricing.html" className="nav-link">Pricing</a>
-                      </li>
-                      <li className="nav-item">
-                        <a href="../../pages/examples/login.html" className="nav-link">Login</a>
-                      </li>
-                      <li className="nav-item">
-                        <a href="../../pages/examples/register.html" className="nav-link">Register</a>
-                      </li>
-                      <li className="nav-item">
-                        <a href="../../pages/examples/lock.html" className="nav-link">Lock</a>
-                      </li>
-                      <li className="nav-item">
-                        <a href="../../pages/examples/timeline.html" className="nav-link">Timeline</a>
-                      </li>
-                      <li className="nav-item">
-                        <a href="../../pages/examples/profile.html" className="nav-link">Profile</a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#navbar-components" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-components">
-                    <i className="ni ni-ui-04 text-info"></i>
-                    <span className="nav-link-text">Components</span>
-                  </a>
-                  <div className="collapse" id="navbar-components">
-                    <ul className="nav nav-sm flex-column">
-                      <li className="nav-item">
-                        <a href="../../pages/components/buttons.html" className="nav-link">Buttons</a>
-                      </li>
-                      <li className="nav-item">
-                        <a href="../../pages/components/cards.html" className="nav-link">Cards</a>
-                      </li>
-                      <li className="nav-item">
-                        <a href="../../pages/components/grid.html" className="nav-link">Grid</a>
-                      </li>
-                      <li className="nav-item">
-                        <a href="../../pages/components/notifications.html" className="nav-link">Notifications</a>
-                      </li>
-                      <li className="nav-item">
-                        <a href="../../pages/components/icons.html" className="nav-link">Icons</a>
-                      </li>
-                      <li className="nav-item">
-                        <a href="../../pages/components/typography.html" className="nav-link">Typography</a>
-                      </li>
-                      <li className="nav-item">
-                        <a href="#navbar-multilevel" className="nav-link" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-multilevel">Multi level</a>
-                        <div className="collapse show" id="navbar-multilevel" style={{}}>
-                          <ul className="nav nav-sm flex-column">
-                            <li className="nav-item">
-                              <a href="#!" className="nav-link ">Third level menu</a>
-                            </li>
-                            <li className="nav-item">
-                              <a href="#!" className="nav-link ">Just another link</a>
-                            </li>
-                            <li className="nav-item">
-                              <a href="#!" className="nav-link ">One last link</a>
-                            </li>
-                          </ul>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#navbar-forms" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-forms">
-                    <i className="ni ni-single-copy-04 text-pink"></i>
-                    <span className="nav-link-text">Forms</span>
-                  </a>
-                  <div className="collapse" id="navbar-forms">
-                    <ul className="nav nav-sm flex-column">
-                      <li className="nav-item">
-                        <a href="../../pages/forms/elements.html" className="nav-link">Elements</a>
-                      </li>
-                      <li className="nav-item">
-                        <a href="../../pages/forms/components.html" className="nav-link">Components</a>
-                      </li>
-                      <li className="nav-item">
-                        <a href="../../pages/forms/validation.html" className="nav-link">Validation</a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#navbar-tables" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-tables">
-                    <i className="ni ni-align-left-2 text-default"></i>
-                    <span className="nav-link-text">Tables</span>
-                  </a>
-                  <div className="collapse" id="navbar-tables">
-                    <ul className="nav nav-sm flex-column">
-                      <li className="nav-item">
-                        <a href="../../pages/tables/tables.html" className="nav-link">Tables</a>
-                      </li>
-                      <li className="nav-item">
-                        <a href="../../pages/tables/sortable.html" className="nav-link">Sortable</a>
-                      </li>
-                      <li className="nav-item">
-                        <a href="../../pages/tables/datatables.html" className="nav-link">Datatables</a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#navbar-maps" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-maps">
-                    <i className="ni ni-map-big text-primary"></i>
-                    <span className="nav-link-text">Maps</span>
-                  </a>
-                  <div className="collapse" id="navbar-maps">
-                    <ul className="nav nav-sm flex-column">
-                      <li className="nav-item">
-                        <a href="../../pages/maps/google.html" className="nav-link">Google</a>
-                      </li>
-                      <li className="nav-item">
-                        <a href="../../pages/maps/vector.html" className="nav-link">Vector</a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="../../pages/widgets.html">
-                    <i className="ni ni-archive-2 text-green"></i>
-                    <span className="nav-link-text">Widgets</span>
+                  <a className="nav-link collapsed" href="/quan-ly-nhan-vien">
+                    <AssignmentIndIcon className="text-green" style = {{fontSize: "18px"}}/>
+                    <span className="nav-link-text" style = {{marginLeft: "22px"}}>Quản lý nhân viên</span>
                   </a>
                 </li>
-                <li className="nav-item">
+                {/* <li className="nav-item">
                   <a className="nav-link" href="../../pages/charts.html">
                     <i className="ni ni-chart-pie-35 text-info"></i>
                     <span className="nav-link-text">Charts</span>
@@ -199,39 +83,21 @@ class Sidebar extends Component<Props, State> {
                     <i className="ni ni-calendar-grid-58 text-red"></i>
                     <span className="nav-link-text">Calendar</span>
                   </a>
-                </li>
+                </li> */}
               </ul>
               {/* Divider */}
-              <hr className="my-3" />
+             {/*  <hr className="my-3" /> */}
               {/* Heading */}
-              <h6 className="navbar-heading p-0 text-muted">Documentation</h6>
-              {/* Navigation */}
-              <ul className="navbar-nav mb-md-3">
+{/*               <h6 className="navbar-heading p-0 text-muted">DEVELOPER</h6>
+ */}              {/* Navigation */}
+              {/* <ul className="navbar-nav mb-md-3">
                 <li className="nav-item">
-                  <a className="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/getting-started/overview.html" target="_blank">
+                  <a className="nav-link" href="https://www.facebook.com/O.o.HVN.Official.o.O" target="_blank">
                     <i className="ni ni-spaceship"></i>
-                    <span className="nav-link-text">Getting started</span>
+                    <span className="nav-link-text">TEAM</span>
                   </a>
                 </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/foundation/colors.html" target="_blank">
-                    <i className="ni ni-palette"></i>
-                    <span className="nav-link-text">Foundation</span>
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/components/alerts.html" target="_blank">
-                    <i className="ni ni-ui-04"></i>
-                    <span className="nav-link-text">Components</span>
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/plugins/charts.html" target="_blank">
-                    <i className="ni ni-chart-pie-35"></i>
-                    <span className="nav-link-text">Plugins</span>
-                  </a>
-                </li>
-              </ul>
+              </ul> */}
             </div>
           </div>
         </div>
@@ -242,9 +108,7 @@ class Sidebar extends Component<Props, State> {
 
 type Props = {};
 type State = {
-  sidebar: boolean;
-
+  sidenavOpen: boolean
 };
-
 
 export default Sidebar;

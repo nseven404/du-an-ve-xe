@@ -10,6 +10,7 @@ import './App.css';
 import Dashboard from './pages/Dashboard';
 import Register from './pages/Register';
 import LoginQL from './pages/LoginQL';
+import NhanVien from './pages/NhanVien';
 
 function App() {
   return (
@@ -17,6 +18,9 @@ function App() {
       <Router>
         <div>
           <Switch>
+            <Route path="/quan-ly-nhan-vien">
+              <NhanVien/>
+            </Route>
             <Route path="/dashboard">
               <Dashboard />
             </Route>
@@ -24,7 +28,7 @@ function App() {
               <Register />
             </Route>
             <Route path="/">
-              <LoginQL/>
+              <LoginQL />
             </Route>
           </Switch>
         </div>
