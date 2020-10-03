@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {
     Link
-  } from "react-router-dom";
+} from "react-router-dom";
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import LaunchIcon from '@material-ui/icons/Launch';
 import PersonIcon from '@material-ui/icons/Person';
@@ -29,20 +29,20 @@ class NavbarDashboard extends Component<Props, State> {
         }
     };
     onShowNav = () => {
-        this.setState({ showNav: !this.state.showNav, showNav1: true, showNav2:true });
+        this.setState({ showNav: !this.state.showNav, showNav1: true, showNav2: true });
     };
 
     onShowThongBao = () => {
-        this.setState({showNav1: !this.state.showNav1, showNav: true, showNav2: true});
+        this.setState({ showNav1: !this.state.showNav1, showNav: true, showNav2: true });
     }
 
     focusedTimKiem = () => {
-        this.setState({ focused: !this.state.focused, showNav:true, showNav1: true, showNav2:true });
+        this.setState({ focused: !this.state.focused, showNav: true, showNav1: true, showNav2: true });
     }
 
     onNavbar = () => {
         this.setState({
-            sidebar: !this.state.sidebar, showNav: true, showNav1: true, showNav2:true
+            sidebar: !this.state.sidebar, showNav: true, showNav1: true, showNav2: true
         })
         if (!document.body.classList.contains("g-sidenav-pinned")) {
             document.body.classList.add("g-sidenav-pinned");
@@ -115,8 +115,8 @@ class NavbarDashboard extends Component<Props, State> {
                         <ul className="navbar-nav align-items-center ml-md-auto" >
                             <li className="nav-item d-xl-none">
                                 {/* Sidenav toggler */}
-                                <div className= {this.state.sidebar ? "pr-3 sidenav-toggler sidenav-toggler-dark" : "pr-3 sidenav-toggler sidenav-toggler-dark active"} data-action="sidenav-pin" data-target="#sidenav-main" onClick={this.onNavbar} onMouseEnter={this.onMouseEnterSidenav}
-                onMouseLeave={this.onMouseLeaveSidenav}>
+                                <div className={this.state.sidebar ? "pr-3 sidenav-toggler sidenav-toggler-dark" : "pr-3 sidenav-toggler sidenav-toggler-dark active"} data-action="sidenav-pin" data-target="#sidenav-main" onClick={this.onNavbar} onMouseEnter={this.onMouseEnterSidenav}
+                                    onMouseLeave={this.onMouseLeaveSidenav}>
                                     <div className="sidenav-toggler-inner">
                                         <i className="sidenav-toggler-line"></i>
                                         <i className="sidenav-toggler-line"></i>
@@ -130,7 +130,7 @@ class NavbarDashboard extends Component<Props, State> {
                                 </a>
                             </li>
                             <li className="nav-item dropdown">
-                                <a className="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onClick = {this.onShowThongBao}>
+                                <a className="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onClick={this.onShowThongBao}>
                                     <NotificationsIcon />
                                 </a>
                                 <div className={this.state.showNav1 ? "dropdown-menu dropdown-menu-xl dropdown-menu-right py-0 overflow-hidden" : "dropdown-menu dropdown-menu-xl dropdown-menu-right py-0 overflow-hidden show"}>
@@ -242,7 +242,7 @@ class NavbarDashboard extends Component<Props, State> {
                             </li>
                             <li className="nav-item dropdown" onClick={(event) => {
 
-                                this.setState({ showNav2: !this.state.showNav2, showNav: true, showNav1: true});
+                                this.setState({ showNav2: !this.state.showNav2, showNav: true, showNav1: true });
 
                             }}>
                                 <a className="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -327,10 +327,10 @@ class NavbarDashboard extends Component<Props, State> {
                                         <span>Hỗ trợ</span>
                                     </a>
                                     <div className="dropdown-divider"></div>
-                                    <a href="#!" className="dropdown-item">
+                                    <Link className="dropdown-item" to="/">
                                         <DirectionsRunIcon style={{ fontSize: "20px" }} />
                                         <span>Đăng xuất</span>
-                                    </a>
+                                    </Link>
                                 </div>
                             </li>
                         </ul>

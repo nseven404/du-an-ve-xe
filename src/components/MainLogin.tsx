@@ -18,11 +18,11 @@ class MainLogin extends Component {
                             </div>
                         </div>
                     </div>
-                    {/* <div className="separator separator-bottom separator-skew zindex-100">
+                    <div className="separator separator-bottom separator-skew zindex-100">
                         <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
                             <polygon className="fill-default" points="2560 0 2560 100 0 100"></polygon>
                         </svg>
-                    </div> */}
+                    </div>
                 </div>
                 {/* <!--  --> */}
                 <div className="container mt--8 pb-5">
@@ -34,11 +34,11 @@ class MainLogin extends Component {
                                     <div className="btn-wrapper text-center">
                                         <a href="#" className="btn btn-neutral btn-icon">
                                             <span className="btn-inner--icon">
-                                            <img src={require("./images/facebook.svg")} alt=""/></span>
+                                                <img src={require("./images/facebook.svg")} alt="" /></span>
                                             <span className="btn-inner--text">Facebook</span>
                                         </a>
                                         <a href="#" className="btn btn-neutral btn-icon">
-                                            <span className="btn-inner--icon"><img src={require("./images/google.svg")} alt=""/></span>
+                                            <span className="btn-inner--icon"><img src={require("./images/google.svg")} alt="" /></span>
                                             <span className="btn-inner--text">Google</span>
                                         </a>
                                     </div>
@@ -51,7 +51,7 @@ class MainLogin extends Component {
                                         <div className="form-group mb-3">
                                             <div className="input-group input-group-merge input-group-alternative">
                                                 <div className="input-group-prepend">
-                                                    <span className="input-group-text"><EmailIcon style = {{fontSize: "18px"}}/></span>
+                                                    <span className="input-group-text"><EmailIcon style={{ fontSize: "18px" }} /></span>
                                                 </div>
                                                 <input className="form-control" placeholder="Email" type="email" />
                                             </div>
@@ -59,7 +59,7 @@ class MainLogin extends Component {
                                         <div className="form-group">
                                             <div className="input-group input-group-merge input-group-alternative">
                                                 <div className="input-group-prepend">
-                                                    <span className="input-group-text"><LockOpenIcon style = {{fontSize: "18px"}}/></span>
+                                                    <span className="input-group-text"><LockOpenIcon style={{ fontSize: "18px" }} /></span>
                                                 </div>
                                                 <input className="form-control" placeholder="Mật khẩu" type="password" />
                                             </div>
@@ -71,7 +71,11 @@ class MainLogin extends Component {
                                             </label>
                                         </div>
                                         <div className="text-center">
-                                            <button type="button" className="btn btn-primary my-4">Đăng nhập</button>
+                                            <Link className="text-light" to="/dashboard">
+                                                <button type="button" className="btn btn-primary my-4">
+                                                    Đăng nhập
+                                                </button>
+                                            </Link>
                                         </div>
                                     </form>
                                 </div>
