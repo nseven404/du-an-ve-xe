@@ -7,15 +7,15 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import KeyboardArrowLeftIcon from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
 import ImportExportIcon from '@material-ui/icons/ImportExport';
-import ImageIcon from '@material-ui/icons/Image';
 import FaceIcon from '@material-ui/icons/Face';
-import PhoneIcon from '@material-ui/icons/Phone';
 import BrandingWatermarkIcon from '@material-ui/icons/BrandingWatermark';
 import CalendarTodayIcon from '@material-ui/icons/CalendarToday';
-import RecentActorsIcon from '@material-ui/icons/RecentActors';
+import CallToActionIcon from '@material-ui/icons/CallToAction';
 import AddIcon from '@material-ui/icons/Add';
+import CommuteIcon from '@material-ui/icons/Commute';
+import DepartureBoardIcon from '@material-ui/icons/DepartureBoard';
 
-class Tables extends Component<Props, State> {
+class TableXe extends Component<Props, State> {
     constructor(props: any) {
         super(props);
         this.state = {
@@ -34,7 +34,7 @@ class Tables extends Component<Props, State> {
     }
 
     hideModal = () => {
-        this.setState({ formModal: this.state.formModal})
+        this.setState({ formModal: this.state.formModal })
     };
 
     hideAlert = () => {
@@ -56,7 +56,7 @@ class Tables extends Component<Props, State> {
                 confirmBtnText="Ok"
                 btnSize=""
             >
-                Thêm nhân viên thành công ...
+                Thêm xe thành công ...
         </ReactBSAlert>
         });
     };
@@ -64,22 +64,22 @@ class Tables extends Component<Props, State> {
     // Thông báo cảnh báo
     warningAlert = () => {
         this.setState({
-          alert: (
-            <ReactBSAlert
-              warning
-              style={{ display: "block", marginTop: "110px" }}
-              title="Cảnh báo"
-              onConfirm={() => this.hideAlert()}
-              onCancel={() => this.hideAlert()}
-              confirmBtnBsStyle="warning"
-              confirmBtnText="Ok"
-              btnSize=""
-            >
-              Cảnh báo ...
-            </ReactBSAlert>
-          )
+            alert: (
+                <ReactBSAlert
+                    warning
+                    style={{ display: "block", marginTop: "110px" }}
+                    title="Cảnh báo"
+                    onConfirm={() => this.hideAlert()}
+                    onCancel={() => this.hideAlert()}
+                    confirmBtnBsStyle="warning"
+                    confirmBtnText="Ok"
+                    btnSize=""
+                >
+                    Cảnh báo ...
+                </ReactBSAlert>
+            )
         });
-      };
+    };
 
 
     render() {
@@ -90,7 +90,7 @@ class Tables extends Component<Props, State> {
                     <div className="card-header border-0">
                         <div className="row">
                             <div className="col-6">
-                                <h3 className="mb-0">Danh sách nhân viên</h3>
+                                <h3 className="mb-0">Danh sách xe</h3>
                             </div>
 
                             <div className="col-6 text-right">
@@ -106,65 +106,76 @@ class Tables extends Component<Props, State> {
                                                 <div className="card bg-secondary border-0 mb-0">
                                                     <div className="card-body px-lg-5 py-lg-5">
                                                         <div className="text-center text-muted mb-4">
-                                                            <small>Thêm nhân viên</small>
+                                                            <small>THÊM XE</small>
                                                         </div>
                                                         <form role="form">
                                                             <div className="form-group mb-3">
-                                                                <div className="input-group input-group-merge input-group-alternative">
-                                                                    <div className="input-group-prepend">
-                                                                        <span className="input-group-text"><ImageIcon /></span>
-                                                                    </div>
-                                                                    <input className="form-control" placeholder="Ảnh nhân viên" type="url" />
-                                                                </div>
-                                                            </div>
-                                                            <div className="form-group">
+                                                                <label className="float-left text-red" style={{ fontSize: "10px" }}>(*)Tên xe</label>
                                                                 <div className="input-group input-group-merge input-group-alternative">
                                                                     <div className="input-group-prepend">
                                                                         <span className="input-group-text"><FaceIcon /></span>
                                                                     </div>
-                                                                    <input className="form-control" placeholder="Tên nhân viên" type="text" />
+                                                                    <input className="form-control" placeholder="Tên xe" type="text" />
                                                                 </div>
                                                             </div>
                                                             <div className="form-group">
+                                                                <label className="float-left text-red" style={{ fontSize: "10px" }}>(*)Loại xe</label>
                                                                 <div className="input-group input-group-merge input-group-alternative">
                                                                     <div className="input-group-prepend">
-                                                                        <span className="input-group-text"><PhoneIcon /></span>
+                                                                        <span className="input-group-text"><CommuteIcon /></span>
                                                                     </div>
-                                                                    <input className="form-control" placeholder="Số điện thoại" type="text" />
+                                                                    <select className="form-control" id="exampleFormControlSelect2">
+                                                                        <option>Xe ABC</option>
+                                                                        <option>Xe ABC</option>
+                                                                        <option>Xe ABC</option>
+                                                                    </select>
                                                                 </div>
                                                             </div>
                                                             <div className="form-group">
+                                                                <label className="float-left text-red" style={{ fontSize: "10px" }}>(*)Biển số xe</label>
+                                                                <div className="input-group input-group-merge input-group-alternative">
+                                                                    <div className="input-group-prepend">
+                                                                        <span className="input-group-text"><CallToActionIcon /></span>
+                                                                    </div>
+                                                                    <input className="form-control" placeholder="Biển số xe" type="text" />
+                                                                </div>
+                                                            </div>
+                                                            <div className="form-group">
+                                                                <label className="float-left text-red" style={{ fontSize: "10px" }}>(*)Ngày nhập xe</label>
+                                                                <div className="input-group input-group-merge input-group-alternative">
+                                                                    <div className="input-group-prepend">
+                                                                        <span className="input-group-text"><DepartureBoardIcon /></span>
+                                                                    </div>
+                                                                    <input className="form-control" type="date" placeholder="Ngày nhập xe" id="example-date-input" />
+                                                                </div>
+                                                            </div>
+                                                            <div className="form-group">
+                                                                <label className="float-left text-red" style={{ fontSize: "10px" }}>(*)Xuất xứ</label>
                                                                 <div className="input-group input-group-merge input-group-alternative">
                                                                     <div className="input-group-prepend">
                                                                         <span className="input-group-text"><BrandingWatermarkIcon /></span>
                                                                     </div>
-                                                                    <input className="form-control" placeholder="CMND" type="text" />
+                                                                    <input className="form-control" placeholder="Xuất xứ" type="text" />
                                                                 </div>
+
                                                             </div>
                                                             <div className="form-group">
+                                                                <label className="float-left text-red" style={{ fontSize: "10px" }}>(*)Tình trạng</label>
                                                                 <div className="input-group input-group-merge input-group-alternative">
                                                                     <div className="input-group-prepend">
-                                                                        <span className="input-group-text"><CalendarTodayIcon /></span>
-                                                                    </div>
-                                                                    <input className="form-control" type="date" value="2018-11-23" id="example-date-input" />
-                                                                </div>
-                                                            </div>
-                                                            <div className="form-group">
-                                                                <div className="input-group input-group-merge input-group-alternative">
-                                                                    <div className="input-group-prepend">
-                                                                        <span className="input-group-text"><RecentActorsIcon /></span>
+                                                                        <span className="input-group-text"><CommuteIcon /></span>
                                                                     </div>
                                                                     <select className="form-control" id="exampleFormControlSelect2">
-                                                                        <option>Trưởng phòng</option>
-                                                                        <option>Nhân viên</option>
-                                                                        <option>Bảo vệ</option>
+                                                                        <option value ="Bình thường">Bình thường</option>
+                                                                        <option value = "Hư hỏng">Hư hỏng</option>
+                                                                        <option value = "Đã bán">Đã bán</option>
+                                                                        <option value = "Bảo trì">Bảo trì</option>
                                                                     </select>
                                                                 </div>
                                                             </div>
-
-                                                            <div onClick = {this.hideModal} className="text-center">
-                                                            <Button color="success" onClick={this.successAlert}>Thêm</Button>
-                                                            <Button color="warning" className ="btn-warning" onClick={this.warningAlert}>Hủy</Button>
+                                                            <div onClick={this.hideModal} className="text-center">
+                                                                <Button color="success" className="btn-success" onClick={this.successAlert}>Thêm</Button>
+                                                                <Button color="warning" className="btn-warning" onClick={this.warningAlert}>Hủy</Button>
                                                             </div>
                                                         </form>
                                                     </div>
@@ -179,7 +190,7 @@ class Tables extends Component<Props, State> {
                                 </a>
                                 <div className="form-group row float-right">
                                     <div className="col-md-auto">
-                                        <input className="form-control form-control-default" type="search" placeholder= "Tìm kiếm" id="example-search-input" />
+                                        <input className="form-control form-control-default" type="search" placeholder="Tìm kiếm" id="example-search-input" />
                                     </div>
                                 </div>
                             </div>
@@ -190,36 +201,34 @@ class Tables extends Component<Props, State> {
                         <table className="table align-items-center table-flush table-striped">
                             <thead className="thead-light">
                                 <tr>
-                                    <th scope="col" className="sort" data-sort="name">Ảnh & Tên</th>
-                                    <th scope="col" className="sort" data-sort="birthday">Ngày sinh</th>
-                                    <th scope="col" className="sort" data-sort="address">Địa chỉ</th>
-                                    <th scope="col" className="sort" data-sort="numberphone">Số điện thoại</th>
-                                    <th scope="col" className="sort" data-sort="cmnd">CMND</th>
-                                    <th scope="col" className="sort" data-sort="chucVu">Chức vụ</th>
+                                    <th scope="col" className="sort" data-sort="name">Tên xe</th>
+                                    <th scope="col" className="sort" data-sort="birthday">Loại xe</th>
+                                    <th scope="col" className="sort" data-sort="address">Biển số xe</th>
+                                    <th scope="col" className="sort" data-sort="numberphone">Ngày nhập</th>
+                                    <th scope="col" className="sort" data-sort="cmnd">Xuất xứ</th>
+                                    <th scope="col" className="sort" data-sort="chucVu">Tình trạng</th>
                                     <th scope="col" className="sort" data-sort="action">Thao tác</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-
                                     <td className="table-user">
-                                        <img src="/images/huynhvannam.jpg" className="avatar rounded-circle mr-3" />
-                                        <b>Huỳnh Văn Nam</b>
+                                        <b>Xe đường dài</b>
                                     </td>
                                     <td>
-                                        <span className="text-muted">10/09/2018</span>
+                                        <span className="text-muted">Xe giường nằm</span>
                                     </td>
                                     <td>
-                                        <span className="text-muted">Buôn Mê Thuột</span>
+                                        <span className="text-muted">47S1-12526</span>
                                     </td>
                                     <td>
-                                        <span className="text-muted">0369229494</span>
+                                        <span className="text-muted">10-03-2020</span>
                                     </td>
                                     <td>
-                                        <span className="text-muted">123456789</span>
+                                        <span className="text-muted">Nhật Bản</span>
                                     </td>
                                     <td>
-                                        <span className="text-muted">Quản lý</span>
+                                        <span className="text-muted">Bình thường</span>
                                     </td>
                                     <td className="table-actions">
                                         <a href="#!" className="table-action" data-toggle="tooltip" data-original-title="Edit product">
@@ -232,23 +241,22 @@ class Tables extends Component<Props, State> {
                                 </tr>
                                 <tr>
                                     <td className="table-user">
-                                        <img src="/images/huynhvannam.jpg" className="avatar rounded-circle mr-3" />
-                                        <b>Huỳnh Văn Nam</b>
+                                        <b>Xe đường dài</b>
                                     </td>
                                     <td>
-                                        <span className="text-muted">08/09/2018</span>
+                                        <span className="text-muted">Xe giường nằm</span>
                                     </td>
                                     <td>
-                                        <span className="text-muted">Buôn Mê Thuột</span>
+                                        <span className="text-muted">47S1-12526</span>
                                     </td>
                                     <td>
-                                        <span className="text-muted">0369229494</span>
+                                        <span className="text-muted">10-03-2020</span>
                                     </td>
                                     <td>
-                                        <span className="text-muted">123456789</span>
+                                        <span className="text-muted">Nhật Bản</span>
                                     </td>
                                     <td>
-                                        <span className="text-muted">Quản lý</span>
+                                        <span className="text-muted">Bình thường</span>
                                     </td>
                                     <td className="table-actions">
                                         <a href="#!" className="table-action" data-toggle="tooltip" data-original-title="Edit product">
@@ -261,23 +269,22 @@ class Tables extends Component<Props, State> {
                                 </tr>
                                 <tr>
                                     <td className="table-user">
-                                        <img src="/images/huynhvannam.jpg" className="avatar rounded-circle mr-3" />
-                                        <b>Huỳnh Văn Nam</b>
+                                        <b>Xe đường dài</b>
                                     </td>
                                     <td>
-                                        <span className="text-muted">30/08/2018</span>
+                                        <span className="text-muted">Xe giường nằm</span>
                                     </td>
                                     <td>
-                                        <span className="text-muted">Buôn Mê Thuột</span>
+                                        <span className="text-muted">47S1-12526</span>
                                     </td>
                                     <td>
-                                        <span className="text-muted">0369229494</span>
+                                        <span className="text-muted">10-03-2020</span>
                                     </td>
                                     <td>
-                                        <span className="text-muted">123456789</span>
+                                        <span className="text-muted">Nhật Bản</span>
                                     </td>
                                     <td>
-                                        <span className="text-muted">Quản lý</span>
+                                        <span className="text-muted">Bình thường</span>
                                     </td>
                                     <td className="table-actions">
                                         <a href="#!" className="table-action" data-toggle="tooltip" data-original-title="Edit product">
@@ -290,23 +297,22 @@ class Tables extends Component<Props, State> {
                                 </tr>
                                 <tr>
                                     <td className="table-user">
-                                        <img src="/images/huynhvannam.jpg" className="avatar rounded-circle mr-3" />
-                                        <b>Huỳnh Văn Nam</b>
+                                        <b>Xe đường dài</b>
                                     </td>
                                     <td>
-                                        <span className="text-muted">10/09/2018</span>
+                                        <span className="text-muted">Xe giường nằm</span>
                                     </td>
                                     <td>
-                                        <span className="text-muted">Buôn Mê Thuột</span>
+                                        <span className="text-muted">47S1-12526</span>
                                     </td>
                                     <td>
-                                        <span className="text-muted">0369229494</span>
+                                        <span className="text-muted">10-03-2020</span>
                                     </td>
                                     <td>
-                                        <span className="text-muted">123456789</span>
+                                        <span className="text-muted">Nhật Bản</span>
                                     </td>
                                     <td>
-                                        <span className="text-muted">Quản lý</span>
+                                        <span className="text-muted">Bình thường</span>
                                     </td>
                                     <td className="table-actions">
                                         <a href="#!" className="table-action" data-toggle="tooltip" data-original-title="Edit product">
@@ -319,23 +325,22 @@ class Tables extends Component<Props, State> {
                                 </tr>
                                 <tr>
                                     <td className="table-user">
-                                        <img src="/images/huynhvannam.jpg" className="avatar rounded-circle mr-3" />
-                                        <b>Huỳnh Văn Nam</b>
+                                        <b>Xe đường dài</b>
                                     </td>
                                     <td>
-                                        <span className="text-muted">10/09/2018</span>
+                                        <span className="text-muted">Xe giường nằm</span>
                                     </td>
                                     <td>
-                                        <span className="text-muted">Buôn Mê Thuột</span>
+                                        <span className="text-muted">47S1-12526</span>
                                     </td>
                                     <td>
-                                        <span className="text-muted">0369229494</span>
+                                        <span className="text-muted">10-03-2020</span>
                                     </td>
                                     <td>
-                                        <span className="text-muted">123456789</span>
+                                        <span className="text-muted">Nhật Bản</span>
                                     </td>
                                     <td>
-                                        <span className="text-muted">Quản lý</span>
+                                        <span className="text-muted">Bình thường</span>
                                     </td>
                                     <td className="table-actions">
                                         <a href="#!" className="table-action" data-toggle="tooltip" data-original-title="Edit product">
@@ -399,4 +404,4 @@ type State = {
     alert: any
 }
 
-export default Tables;
+export default TableXe;

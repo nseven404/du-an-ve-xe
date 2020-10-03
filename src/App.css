@@ -16382,6 +16382,10 @@ a.btn-icon-only {
     height: calc(.45em + 1.25rem + 5px);
 }
 
+.form-control-default{
+    height: calc(.45em + 1.25rem + 9px);
+}
+
 .form-control-flush {
     padding: 0;
     border-width: 0;

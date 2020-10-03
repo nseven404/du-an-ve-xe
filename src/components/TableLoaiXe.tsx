@@ -7,15 +7,11 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import KeyboardArrowLeftIcon from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
 import ImportExportIcon from '@material-ui/icons/ImportExport';
-import ImageIcon from '@material-ui/icons/Image';
-import FaceIcon from '@material-ui/icons/Face';
-import PhoneIcon from '@material-ui/icons/Phone';
-import BrandingWatermarkIcon from '@material-ui/icons/BrandingWatermark';
-import CalendarTodayIcon from '@material-ui/icons/CalendarToday';
-import RecentActorsIcon from '@material-ui/icons/RecentActors';
+import ClosedCaptionIcon from '@material-ui/icons/ClosedCaption';
+import PersonIcon from '@material-ui/icons/Person';
 import AddIcon from '@material-ui/icons/Add';
 
-class Tables extends Component<Props, State> {
+class TableLoaiXe extends Component<Props, State> {
     constructor(props: any) {
         super(props);
         this.state = {
@@ -34,7 +30,7 @@ class Tables extends Component<Props, State> {
     }
 
     hideModal = () => {
-        this.setState({ formModal: this.state.formModal})
+        this.setState({ formModal: this.state.formModal })
     };
 
     hideAlert = () => {
@@ -64,36 +60,37 @@ class Tables extends Component<Props, State> {
     // Thông báo cảnh báo
     warningAlert = () => {
         this.setState({
-          alert: (
-            <ReactBSAlert
-              warning
-              style={{ display: "block", marginTop: "110px" }}
-              title="Cảnh báo"
-              onConfirm={() => this.hideAlert()}
-              onCancel={() => this.hideAlert()}
-              confirmBtnBsStyle="warning"
-              confirmBtnText="Ok"
-              btnSize=""
-            >
-              Cảnh báo ...
-            </ReactBSAlert>
-          )
+            alert: (
+                <ReactBSAlert
+                    warning
+                    style={{ display: "block", marginTop: "110px" }}
+                    title="Cảnh báo"
+                    onConfirm={() => this.hideAlert()}
+                    onCancel={() => this.hideAlert()}
+                    confirmBtnBsStyle="warning"
+                    confirmBtnText="Ok"
+                    btnSize=""
+                >
+                    Cảnh báo ...
+                </ReactBSAlert>
+            )
         });
-      };
-
+    };
 
     render() {
         return (
-            <> {this.state.alert}
+            <>
+                {this.state.alert}
                 <div className="card">
                     {/* Card header */}
                     <div className="card-header border-0">
                         <div className="row">
                             <div className="col-6">
-                                <h3 className="mb-0">Danh sách nhân viên</h3>
+                                <h3 className="mb-0">Danh sách loại xe</h3>
                             </div>
 
                             <div className="col-6 text-right">
+
                                 <button onClick={this.showModal} className="btn btn-sm btn-primary btn-round btn-icon" data-toggle="tooltip" data-original-title="Edit product" >
                                     <span className="btn-inner--icon"><AddIcon /></span>
                                     <span className="btn-inner--text">Thêm</span>
@@ -106,66 +103,28 @@ class Tables extends Component<Props, State> {
                                                 <div className="card bg-secondary border-0 mb-0">
                                                     <div className="card-body px-lg-5 py-lg-5">
                                                         <div className="text-center text-muted mb-4">
-                                                            <small>Thêm nhân viên</small>
+                                                            <small>Thêm loại xe</small>
                                                         </div>
                                                         <form role="form">
                                                             <div className="form-group mb-3">
                                                                 <div className="input-group input-group-merge input-group-alternative">
                                                                     <div className="input-group-prepend">
-                                                                        <span className="input-group-text"><ImageIcon /></span>
+                                                                        <span className="input-group-text"><ClosedCaptionIcon /></span>
                                                                     </div>
-                                                                    <input className="form-control" placeholder="Ảnh nhân viên" type="url" />
+                                                                    <input className="form-control" placeholder="Tên loại" type="url" />
                                                                 </div>
                                                             </div>
                                                             <div className="form-group">
                                                                 <div className="input-group input-group-merge input-group-alternative">
-                                                                    <div className="input-group-prepend">
-                                                                        <span className="input-group-text"><FaceIcon /></span>
-                                                                    </div>
-                                                                    <input className="form-control" placeholder="Tên nhân viên" type="text" />
-                                                                </div>
-                                                            </div>
-                                                            <div className="form-group">
-                                                                <div className="input-group input-group-merge input-group-alternative">
-                                                                    <div className="input-group-prepend">
-                                                                        <span className="input-group-text"><PhoneIcon /></span>
-                                                                    </div>
-                                                                    <input className="form-control" placeholder="Số điện thoại" type="text" />
-                                                                </div>
-                                                            </div>
-                                                            <div className="form-group">
-                                                                <div className="input-group input-group-merge input-group-alternative">
-                                                                    <div className="input-group-prepend">
-                                                                        <span className="input-group-text"><BrandingWatermarkIcon /></span>
-                                                                    </div>
-                                                                    <input className="form-control" placeholder="CMND" type="text" />
-                                                                </div>
-                                                            </div>
-                                                            <div className="form-group">
-                                                                <div className="input-group input-group-merge input-group-alternative">
-                                                                    <div className="input-group-prepend">
-                                                                        <span className="input-group-text"><CalendarTodayIcon /></span>
-                                                                    </div>
-                                                                    <input className="form-control" type="date" value="2018-11-23" id="example-date-input" />
-                                                                </div>
-                                                            </div>
-                                                            <div className="form-group">
-                                                                <div className="input-group input-group-merge input-group-alternative">
-                                                                    <div className="input-group-prepend">
-                                                                        <span className="input-group-text"><RecentActorsIcon /></span>
-                                                                    </div>
-                                                                    <select className="form-control" id="exampleFormControlSelect2">
-                                                                        <option>Trưởng phòng</option>
-                                                                        <option>Nhân viên</option>
-                                                                        <option>Bảo vệ</option>
-                                                                    </select>
+                                                                    <textarea className="form-control" id="exampleFormControlTextarea1" rows={3} placeholder="Mô tả"></textarea>
                                                                 </div>
                                                             </div>
 
-                                                            <div onClick = {this.hideModal} className="text-center">
-                                                            <Button color="success" onClick={this.successAlert}>Thêm</Button>
-                                                            <Button color="warning" className ="btn-warning" onClick={this.warningAlert}>Hủy</Button>
+                                                            <div onClick={this.hideModal} className="text-center">
+                                                                <Button color="success" className="btn-success" onClick={this.successAlert}>Thêm</Button>
+                                                                <Button color="warning" className="btn-warning" onClick={this.warningAlert}>Hủy</Button>
                                                             </div>
+
                                                         </form>
                                                     </div>
                                                 </div>
@@ -179,7 +138,7 @@ class Tables extends Component<Props, State> {
                                 </a>
                                 <div className="form-group row float-right">
                                     <div className="col-md-auto">
-                                        <input className="form-control form-control-default" type="search" placeholder= "Tìm kiếm" id="example-search-input" />
+                                        <input className="form-control form-control-default" type="search" placeholder="Tìm kiếm" id="example-search-input" />
                                     </div>
                                 </div>
                             </div>
@@ -190,37 +149,33 @@ class Tables extends Component<Props, State> {
                         <table className="table align-items-center table-flush table-striped">
                             <thead className="thead-light">
                                 <tr>
-                                    <th scope="col" className="sort" data-sort="name">Ảnh & Tên</th>
-                                    <th scope="col" className="sort" data-sort="birthday">Ngày sinh</th>
-                                    <th scope="col" className="sort" data-sort="address">Địa chỉ</th>
-                                    <th scope="col" className="sort" data-sort="numberphone">Số điện thoại</th>
-                                    <th scope="col" className="sort" data-sort="cmnd">CMND</th>
-                                    <th scope="col" className="sort" data-sort="chucVu">Chức vụ</th>
-                                    <th scope="col" className="sort" data-sort="action">Thao tác</th>
+                                    <th></th>
+                                    <th scope="col" className="sort" data-sort="codeChucVu">Tên loại</th>
+                                    <th></th>
+                                    <th></th>
+                                    <th scope="col" className="sort" data-sort="nameChucVu">Mô tả</th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th scope="col" className="sort" data-sort="action">Hành động</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-
+                                    <td></td>
                                     <td className="table-user">
-                                        <img src="/images/huynhvannam.jpg" className="avatar rounded-circle mr-3" />
-                                        <b>Huỳnh Văn Nam</b>
+                                        <span className="text-muted">Xe ABC</span>
                                     </td>
+                                    <td></td>
+                                    <td></td>
                                     <td>
-                                        <span className="text-muted">10/09/2018</span>
+                                        <span className="text-muted">Xe giường nằm cao cấp</span>
                                     </td>
-                                    <td>
-                                        <span className="text-muted">Buôn Mê Thuột</span>
-                                    </td>
-                                    <td>
-                                        <span className="text-muted">0369229494</span>
-                                    </td>
-                                    <td>
-                                        <span className="text-muted">123456789</span>
-                                    </td>
-                                    <td>
-                                        <span className="text-muted">Quản lý</span>
-                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
                                     <td className="table-actions">
                                         <a href="#!" className="table-action" data-toggle="tooltip" data-original-title="Edit product">
                                             <EditIcon />
@@ -231,25 +186,19 @@ class Tables extends Component<Props, State> {
                                     </td>
                                 </tr>
                                 <tr>
+                                    <td></td>
                                     <td className="table-user">
-                                        <img src="/images/huynhvannam.jpg" className="avatar rounded-circle mr-3" />
-                                        <b>Huỳnh Văn Nam</b>
+                                        <span className="text-muted">Xe ABC</span>
                                     </td>
+                                    <td></td>
+                                    <td></td>
                                     <td>
-                                        <span className="text-muted">08/09/2018</span>
+                                        <span className="text-muted">Xe giường nằm cao cấp</span>
                                     </td>
-                                    <td>
-                                        <span className="text-muted">Buôn Mê Thuột</span>
-                                    </td>
-                                    <td>
-                                        <span className="text-muted">0369229494</span>
-                                    </td>
-                                    <td>
-                                        <span className="text-muted">123456789</span>
-                                    </td>
-                                    <td>
-                                        <span className="text-muted">Quản lý</span>
-                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
                                     <td className="table-actions">
                                         <a href="#!" className="table-action" data-toggle="tooltip" data-original-title="Edit product">
                                             <EditIcon />
@@ -260,25 +209,19 @@ class Tables extends Component<Props, State> {
                                     </td>
                                 </tr>
                                 <tr>
+                                    <td></td>
                                     <td className="table-user">
-                                        <img src="/images/huynhvannam.jpg" className="avatar rounded-circle mr-3" />
-                                        <b>Huỳnh Văn Nam</b>
+                                        <span className="text-muted">Xe ABC</span>
                                     </td>
+                                    <td></td>
+                                    <td></td>
                                     <td>
-                                        <span className="text-muted">30/08/2018</span>
+                                        <span className="text-muted">Xe giường nằm cao cấp</span>
                                     </td>
-                                    <td>
-                                        <span className="text-muted">Buôn Mê Thuột</span>
-                                    </td>
-                                    <td>
-                                        <span className="text-muted">0369229494</span>
-                                    </td>
-                                    <td>
-                                        <span className="text-muted">123456789</span>
-                                    </td>
-                                    <td>
-                                        <span className="text-muted">Quản lý</span>
-                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
                                     <td className="table-actions">
                                         <a href="#!" className="table-action" data-toggle="tooltip" data-original-title="Edit product">
                                             <EditIcon />
@@ -289,25 +232,19 @@ class Tables extends Component<Props, State> {
                                     </td>
                                 </tr>
                                 <tr>
+                                    <td></td>
                                     <td className="table-user">
-                                        <img src="/images/huynhvannam.jpg" className="avatar rounded-circle mr-3" />
-                                        <b>Huỳnh Văn Nam</b>
+                                        <span className="text-muted">Xe ABC</span>
                                     </td>
+                                    <td></td>
+                                    <td></td>
                                     <td>
-                                        <span className="text-muted">10/09/2018</span>
+                                        <span className="text-muted">Xe giường nằm cao cấp</span>
                                     </td>
-                                    <td>
-                                        <span className="text-muted">Buôn Mê Thuột</span>
-                                    </td>
-                                    <td>
-                                        <span className="text-muted">0369229494</span>
-                                    </td>
-                                    <td>
-                                        <span className="text-muted">123456789</span>
-                                    </td>
-                                    <td>
-                                        <span className="text-muted">Quản lý</span>
-                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
                                     <td className="table-actions">
                                         <a href="#!" className="table-action" data-toggle="tooltip" data-original-title="Edit product">
                                             <EditIcon />
@@ -318,25 +255,19 @@ class Tables extends Component<Props, State> {
                                     </td>
                                 </tr>
                                 <tr>
+                                    <td></td>
                                     <td className="table-user">
-                                        <img src="/images/huynhvannam.jpg" className="avatar rounded-circle mr-3" />
-                                        <b>Huỳnh Văn Nam</b>
+                                        <span className="text-muted">Xe ABC</span>
                                     </td>
+                                    <td></td>
+                                    <td></td>
                                     <td>
-                                        <span className="text-muted">10/09/2018</span>
+                                        <span className="text-muted">Xe giường nằm cao cấp</span>
                                     </td>
-                                    <td>
-                                        <span className="text-muted">Buôn Mê Thuột</span>
-                                    </td>
-                                    <td>
-                                        <span className="text-muted">0369229494</span>
-                                    </td>
-                                    <td>
-                                        <span className="text-muted">123456789</span>
-                                    </td>
-                                    <td>
-                                        <span className="text-muted">Quản lý</span>
-                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
                                     <td className="table-actions">
                                         <a href="#!" className="table-action" data-toggle="tooltip" data-original-title="Edit product">
                                             <EditIcon />
@@ -399,4 +330,4 @@ type State = {
     alert: any
 }
 
-export default Tables;
+export default TableLoaiXe;

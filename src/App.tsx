@@ -11,6 +11,9 @@ import Dashboard from './pages/Dashboard';
 import Register from './pages/Register';
 import LoginQL from './pages/LoginQL';
 import NhanVien from './pages/NhanVien';
+import ChucVu from './pages/ChucVu';
+import LoaiXe from './pages/LoaiXe';
+import Xe from './pages/Xe';
 
 function App() {
   return (
@@ -18,8 +21,17 @@ function App() {
       <Router>
         <div>
           <Switch>
+            <Route path="/quan-ly-xe">
+              <Xe />
+            </Route>
+            <Route path="/quan-ly-loai-xe">
+              <LoaiXe />
+            </Route>
+            <Route path="/quan-ly-chuc-vu">
+              <ChucVu />
+            </Route>
             <Route path="/quan-ly-nhan-vien">
-              <NhanVien/>
+              <NhanVien />
             </Route>
             <Route path="/dashboard">
               <Dashboard />

@@ -26,11 +26,15 @@ class NavbarDashboard extends Component<Props, State> {
         }
     };
     onShowNav = () => {
-        this.setState({ showNav: !this.state.showNav });
+        this.setState({ showNav: !this.state.showNav, showNav1: true, showNav2:true });
     };
 
+    onShowThongBao = () => {
+        this.setState({showNav1: !this.state.showNav1, showNav: true, showNav2: true});
+    }
+
     focusedTimKiem = () => {
-        this.setState({ focused: !this.state.focused });
+        this.setState({ focused: !this.state.focused, showNav:true, showNav1: true, showNav2:true });
     }
 
     onNavbar = () => {
@@ -87,8 +91,7 @@ class NavbarDashboard extends Component<Props, State> {
     render() {
         return (
             /* Topnav */
-            < nav className="navbar navbar-top navbar-expand navbar-dark bg-primary border-bottom" onClick={this.onNavbar} onMouseEnter={this.onMouseEnterSidenav}
-                onMouseLeave={this.onMouseLeaveSidenav}>
+            < nav className="navbar navbar-top navbar-expand navbar-dark bg-primary border-bottom">
                 <div className="container-fluid">
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         {/* Search form */}
@@ -106,10 +109,11 @@ class NavbarDashboard extends Component<Props, State> {
                             </button>
                         </form>
                         {/*  Navbar links */}
-                        <ul className="navbar-nav align-items-center ml-md-auto">
+                        <ul className="navbar-nav align-items-center ml-md-auto" >
                             <li className="nav-item d-xl-none">
                                 {/* Sidenav toggler */}
-                                <div className="pr-3 sidenav-toggler sidenav-toggler-dark" data-action="sidenav-pin" data-target="#sidenav-main">
+                                <div className= {this.state.sidebar ? "pr-3 sidenav-toggler sidenav-toggler-dark" : "pr-3 sidenav-toggler sidenav-toggler-dark active"} data-action="sidenav-pin" data-target="#sidenav-main" onClick={this.onNavbar} onMouseEnter={this.onMouseEnterSidenav}
+                onMouseLeave={this.onMouseLeaveSidenav}>
                                     <div className="sidenav-toggler-inner">
                                         <i className="sidenav-toggler-line"></i>
                                         <i className="sidenav-toggler-line"></i>
@@ -123,10 +127,10 @@ class NavbarDashboard extends Component<Props, State> {
                                 </a>
                             </li>
                             <li className="nav-item dropdown">
-                                <a className="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a className="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onClick = {this.onShowThongBao}>
                                     <NotificationsIcon />
                                 </a>
-                                <div className={this.state.showNav2 ? "dropdown-menu dropdown-menu-xl dropdown-menu-right py-0 overflow-hidden" : "dropdown-menu dropdown-menu-xl dropdown-menu-right py-0 overflow-hidden show"}>
+                                <div className={this.state.showNav1 ? "dropdown-menu dropdown-menu-xl dropdown-menu-right py-0 overflow-hidden" : "dropdown-menu dropdown-menu-xl dropdown-menu-right py-0 overflow-hidden show"}>
                                     {/* Dropdown header */}
                                     <div className="px-3 py-3">
                                         <h6 className="text-sm text-muted m-0">Bạn có <strong className="text-primary">13</strong> thông báo.</h6>
@@ -235,13 +239,13 @@ class NavbarDashboard extends Component<Props, State> {
                             </li>
                             <li className="nav-item dropdown" onClick={(event) => {
 
-                                this.setState({ showNav1: !this.state.showNav1 });
+                                this.setState({ showNav2: !this.state.showNav2, showNav: true, showNav1: true});
 
                             }}>
                                 <a className="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <LaunchIcon />
                                 </a>
-                                <div className={this.state.showNav1 ? "dropdown-menu dropdown-menu-lg dropdown-menu-dark bg-default dropdown-menu-right" : "dropdown-menu dropdown-menu-lg dropdown-menu-dark bg-default dropdown-menu-right show"}>
+                                <div className={this.state.showNav2 ? "dropdown-menu dropdown-menu-lg dropdown-menu-dark bg-default dropdown-menu-right" : "dropdown-menu dropdown-menu-lg dropdown-menu-dark bg-default dropdown-menu-right show"}>
                                     <div className="row shortcuts px-4">
                                         <a href="#!" className="col-4 shortcut-item">
                                             <span className="shortcut-media avatar rounded-circle bg-gradient-red">
