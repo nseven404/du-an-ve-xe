@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import {
+    Link
+  } from "react-router-dom";
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import LaunchIcon from '@material-ui/icons/Launch';
 import PersonIcon from '@material-ui/icons/Person';
@@ -39,7 +42,7 @@ class NavbarDashboard extends Component<Props, State> {
 
     onNavbar = () => {
         this.setState({
-            sidebar: !this.state.sidebar
+            sidebar: !this.state.sidebar, showNav: true, showNav1: true, showNav2:true
         })
         if (!document.body.classList.contains("g-sidenav-pinned")) {
             document.body.classList.add("g-sidenav-pinned");
@@ -307,10 +310,10 @@ class NavbarDashboard extends Component<Props, State> {
                                     <div className="dropdown-header noti-title">
                                         <h6 className="text-overflow m-0">Xin chào!</h6>
                                     </div>
-                                    <a href="#!" className="dropdown-item">
+                                    <Link to="/settings" className="dropdown-item">
                                         <PersonIcon style={{ fontSize: "20px" }} />
                                         <span>Thông tin của tôi</span>
-                                    </a>
+                                    </Link>
                                     <a href="#!" className="dropdown-item">
                                         <SettingsIcon style={{ fontSize: "20px" }} />
                                         <span>Cài đặt</span>

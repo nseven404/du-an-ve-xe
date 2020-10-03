@@ -18453,6 +18453,7 @@ textarea[resize='horizontal'] {
 
 .sidenav-toggler.active .sidenav-toggler-inner:before {
     transform: scale(1);
+    
 }
 
 .sidenav-toggler.active .sidenav-toggler-line:first-child {

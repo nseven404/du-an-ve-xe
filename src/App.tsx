@@ -14,6 +14,8 @@ import NhanVien from './pages/NhanVien';
 import ChucVu from './pages/ChucVu';
 import LoaiXe from './pages/LoaiXe';
 import Xe from './pages/Xe';
+import SettingsNhanVien from './pages/SettingsNhanVien';
+import KhachHang from './pages/KhachHang';
 
 function App() {
   return (
@@ -21,6 +23,12 @@ function App() {
       <Router>
         <div>
           <Switch>
+            <Route path="/settings">
+              <SettingsNhanVien/>
+            </Route>
+            <Route path="/quan-ly-khach-hang">
+              <KhachHang />
+            </Route>
             <Route path="/quan-ly-xe">
               <Xe />
             </Route>

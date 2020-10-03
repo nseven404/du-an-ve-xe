@@ -14,8 +14,9 @@ import BrandingWatermarkIcon from '@material-ui/icons/BrandingWatermark';
 import CalendarTodayIcon from '@material-ui/icons/CalendarToday';
 import RecentActorsIcon from '@material-ui/icons/RecentActors';
 import AddIcon from '@material-ui/icons/Add';
+import AlternateEmailIcon from '@material-ui/icons/AlternateEmail';
 
-class Tables extends Component<Props, State> {
+class TableKhachHang extends Component<Props, State> {
     constructor(props: any) {
         super(props);
         this.state = {
@@ -34,7 +35,7 @@ class Tables extends Component<Props, State> {
     }
 
     hideModal = () => {
-        this.setState({ formModal: this.state.formModal})
+        this.setState({ formModal: this.state.formModal })
     };
 
     hideAlert = () => {
@@ -64,22 +65,22 @@ class Tables extends Component<Props, State> {
     // Thông báo cảnh báo
     warningAlert = () => {
         this.setState({
-          alert: (
-            <ReactBSAlert
-              warning
-              style={{ display: "block", marginTop: "110px" }}
-              title="Cảnh báo"
-              onConfirm={() => this.hideAlert()}
-              onCancel={() => this.hideAlert()}
-              confirmBtnBsStyle="warning"
-              confirmBtnText="Ok"
-              btnSize=""
-            >
-              Cảnh báo ...
-            </ReactBSAlert>
-          )
+            alert: (
+                <ReactBSAlert
+                    warning
+                    style={{ display: "block", marginTop: "110px" }}
+                    title="Cảnh báo"
+                    onConfirm={() => this.hideAlert()}
+                    onCancel={() => this.hideAlert()}
+                    confirmBtnBsStyle="warning"
+                    confirmBtnText="Ok"
+                    btnSize=""
+                >
+                    Cảnh báo ...
+                </ReactBSAlert>
+            )
         });
-      };
+    };
 
 
     render() {
@@ -90,7 +91,7 @@ class Tables extends Component<Props, State> {
                     <div className="card-header border-0">
                         <div className="row">
                             <div className="col-6">
-                                <h3 className="mb-0">Danh sách nhân viên</h3>
+                                <h3 className="mb-0">Danh sách khách hàng</h3>
                             </div>
 
                             <div className="col-6 text-right">
@@ -106,26 +107,38 @@ class Tables extends Component<Props, State> {
                                                 <div className="card bg-secondary border-0 mb-0">
                                                     <div className="card-body px-lg-5 py-lg-5">
                                                         <div className="text-center text-muted mb-4">
-                                                            <small>Thêm nhân viên</small>
+                                                            <small>Thêm khách hàng</small>
                                                         </div>
                                                         <form role="form">
                                                             <div className="form-group mb-3">
+                                                                <label className="float-left text-red" style={{ fontSize: "10px" }}>(*)Ảnh khách hàng</label>
                                                                 <div className="input-group input-group-merge input-group-alternative">
                                                                     <div className="input-group-prepend">
                                                                         <span className="input-group-text"><ImageIcon /></span>
                                                                     </div>
-                                                                    <input className="form-control" placeholder="Ảnh nhân viên" type="url" />
+                                                                    <input className="form-control" placeholder="Ảnh khách hàng" type="url" />
                                                                 </div>
                                                             </div>
                                                             <div className="form-group">
+                                                                <label className="float-left text-red" style={{ fontSize: "10px" }}>(*)Tên khách hàng</label>
                                                                 <div className="input-group input-group-merge input-group-alternative">
                                                                     <div className="input-group-prepend">
                                                                         <span className="input-group-text"><FaceIcon /></span>
                                                                     </div>
-                                                                    <input className="form-control" placeholder="Tên nhân viên" type="text" />
+                                                                    <input className="form-control" placeholder="Tên khách hàng" type="text" />
                                                                 </div>
                                                             </div>
                                                             <div className="form-group">
+                                                                <label className="float-left text-red" style={{ fontSize: "10px" }}>(*)Ngày sinh</label>
+                                                                <div className="input-group input-group-merge input-group-alternative">
+                                                                    <div className="input-group-prepend">
+                                                                        <span className="input-group-text"><CalendarTodayIcon /></span>
+                                                                    </div>
+                                                                    <input className="form-control" type="date" id="example-date-input" />
+                                                                </div>
+                                                            </div>
+                                                            <div className="form-group">
+                                                                <label className="float-left text-red" style={{ fontSize: "10px" }}>(*)Số điện thoại</label>
                                                                 <div className="input-group input-group-merge input-group-alternative">
                                                                     <div className="input-group-prepend">
                                                                         <span className="input-group-text"><PhoneIcon /></span>
@@ -134,6 +147,16 @@ class Tables extends Component<Props, State> {
                                                                 </div>
                                                             </div>
                                                             <div className="form-group">
+                                                                <label className="float-left text-red" style={{ fontSize: "10px" }}>(*)Email</label>
+                                                                <div className="input-group input-group-merge input-group-alternative">
+                                                                    <div className="input-group-prepend">
+                                                                        <span className="input-group-text"><AlternateEmailIcon /></span>
+                                                                    </div>
+                                                                    <input className="form-control" placeholder="Email" type="email" />
+                                                                </div>
+                                                            </div>
+                                                            <div className="form-group">
+                                                                <label className="float-left text-red" style={{ fontSize: "10px" }}>(*)CMND</label>
                                                                 <div className="input-group input-group-merge input-group-alternative">
                                                                     <div className="input-group-prepend">
                                                                         <span className="input-group-text"><BrandingWatermarkIcon /></span>
@@ -141,14 +164,7 @@ class Tables extends Component<Props, State> {
                                                                     <input className="form-control" placeholder="CMND" type="text" />
                                                                 </div>
                                                             </div>
-                                                            <div className="form-group">
-                                                                <div className="input-group input-group-merge input-group-alternative">
-                                                                    <div className="input-group-prepend">
-                                                                        <span className="input-group-text"><CalendarTodayIcon /></span>
-                                                                    </div>
-                                                                    <input className="form-control" type="date" id="example-date-input" />
-                                                                </div>
-                                                            </div>
+
                                                             <div className="form-group">
                                                                 <div className="input-group input-group-merge input-group-alternative">
                                                                     <div className="input-group-prepend">
@@ -162,9 +178,9 @@ class Tables extends Component<Props, State> {
                                                                 </div>
                                                             </div>
 
-                                                            <div onClick = {this.hideModal} className="text-center">
-                                                            <Button color="success" onClick={this.successAlert}>Thêm</Button>
-                                                            <Button color="warning" className ="btn-warning" onClick={this.warningAlert}>Hủy</Button>
+                                                            <div onClick={this.hideModal} className="text-center">
+                                                                <Button color="success" onClick={this.successAlert}>Thêm</Button>
+                                                                <Button color="warning" className="btn-warning" onClick={this.warningAlert}>Hủy</Button>
                                                             </div>
                                                         </form>
                                                     </div>
@@ -179,7 +195,7 @@ class Tables extends Component<Props, State> {
                                 </a>
                                 <div className="form-group row float-right">
                                     <div className="col-md-auto">
-                                        <input className="form-control form-control-default" type="search" placeholder= "Tìm kiếm" id="example-search-input" />
+                                        <input className="form-control form-control-default" type="search" placeholder="Tìm kiếm" id="example-search-input" />
                                     </div>
                                 </div>
                             </div>
@@ -191,11 +207,12 @@ class Tables extends Component<Props, State> {
                             <thead className="thead-light">
                                 <tr>
                                     <th scope="col" className="sort" data-sort="name">Ảnh & Tên</th>
+                                    <th scope="col" className="sort" data-sort="gender">Giới tính</th>
                                     <th scope="col" className="sort" data-sort="birthday">Ngày sinh</th>
                                     <th scope="col" className="sort" data-sort="address">Địa chỉ</th>
                                     <th scope="col" className="sort" data-sort="numberphone">Số điện thoại</th>
+                                    <th scope="col" className="sort" data-sort="email">Email</th>
                                     <th scope="col" className="sort" data-sort="cmnd">CMND</th>
-                                    <th scope="col" className="sort" data-sort="chucVu">Chức vụ</th>
                                     <th scope="col" className="sort" data-sort="action">Thao tác</th>
                                 </tr>
                             </thead>
@@ -207,6 +224,9 @@ class Tables extends Component<Props, State> {
                                         <b>Huỳnh Văn Nam</b>
                                     </td>
                                     <td>
+                                        <span className="text-muted">Nam</span>
+                                    </td>
+                                    <td>
                                         <span className="text-muted">10/09/2018</span>
                                     </td>
                                     <td>
@@ -216,11 +236,12 @@ class Tables extends Component<Props, State> {
                                         <span className="text-muted">0369229494</span>
                                     </td>
                                     <td>
-                                        <span className="text-muted">123456789</span>
+                                        <span className="text-muted">admin@gmail.com</span>
                                     </td>
                                     <td>
-                                        <span className="text-muted">Quản lý</span>
+                                        <span className="text-muted">123456789</span>
                                     </td>
+
                                     <td className="table-actions">
                                         <a href="#!" className="table-action" data-toggle="tooltip" data-original-title="Edit product">
                                             <EditIcon />
@@ -234,6 +255,9 @@ class Tables extends Component<Props, State> {
                                     <td className="table-user">
                                         <img src="/images/huynhvannam.jpg" className="avatar rounded-circle mr-3" />
                                         <b>Huỳnh Văn Nam</b>
+                                    </td>
+                                    <td>
+                                        <span className="text-muted">Nam</span>
                                     </td>
                                     <td>
                                         <span className="text-muted">08/09/2018</span>
@@ -245,10 +269,10 @@ class Tables extends Component<Props, State> {
                                         <span className="text-muted">0369229494</span>
                                     </td>
                                     <td>
-                                        <span className="text-muted">123456789</span>
+                                        <span className="text-muted">admin@gmail.com</span>
                                     </td>
                                     <td>
-                                        <span className="text-muted">Quản lý</span>
+                                        <span className="text-muted">123456789</span>
                                     </td>
                                     <td className="table-actions">
                                         <a href="#!" className="table-action" data-toggle="tooltip" data-original-title="Edit product">
@@ -263,6 +287,9 @@ class Tables extends Component<Props, State> {
                                     <td className="table-user">
                                         <img src="/images/huynhvannam.jpg" className="avatar rounded-circle mr-3" />
                                         <b>Huỳnh Văn Nam</b>
+                                    </td>
+                                    <td>
+                                        <span className="text-muted">Nam</span>
                                     </td>
                                     <td>
                                         <span className="text-muted">30/08/2018</span>
@@ -274,10 +301,10 @@ class Tables extends Component<Props, State> {
                                         <span className="text-muted">0369229494</span>
                                     </td>
                                     <td>
-                                        <span className="text-muted">123456789</span>
+                                        <span className="text-muted">admin@gmail.com</span>
                                     </td>
                                     <td>
-                                        <span className="text-muted">Quản lý</span>
+                                        <span className="text-muted">123456789</span>
                                     </td>
                                     <td className="table-actions">
                                         <a href="#!" className="table-action" data-toggle="tooltip" data-original-title="Edit product">
@@ -294,6 +321,9 @@ class Tables extends Component<Props, State> {
                                         <b>Huỳnh Văn Nam</b>
                                     </td>
                                     <td>
+                                        <span className="text-muted">Nam</span>
+                                    </td>
+                                    <td>
                                         <span className="text-muted">10/09/2018</span>
                                     </td>
                                     <td>
@@ -303,10 +333,10 @@ class Tables extends Component<Props, State> {
                                         <span className="text-muted">0369229494</span>
                                     </td>
                                     <td>
-                                        <span className="text-muted">123456789</span>
+                                        <span className="text-muted">admin@gmail.com</span>
                                     </td>
                                     <td>
-                                        <span className="text-muted">Quản lý</span>
+                                        <span className="text-muted">123456789</span>
                                     </td>
                                     <td className="table-actions">
                                         <a href="#!" className="table-action" data-toggle="tooltip" data-original-title="Edit product">
@@ -323,6 +353,9 @@ class Tables extends Component<Props, State> {
                                         <b>Huỳnh Văn Nam</b>
                                     </td>
                                     <td>
+                                        <span className="text-muted">Nam</span>
+                                    </td>
+                                    <td>
                                         <span className="text-muted">10/09/2018</span>
                                     </td>
                                     <td>
@@ -332,10 +365,10 @@ class Tables extends Component<Props, State> {
                                         <span className="text-muted">0369229494</span>
                                     </td>
                                     <td>
-                                        <span className="text-muted">123456789</span>
+                                        <span className="text-muted">admin@gmail.com</span>
                                     </td>
                                     <td>
-                                        <span className="text-muted">Quản lý</span>
+                                        <span className="text-muted">123456789</span>
                                     </td>
                                     <td className="table-actions">
                                         <a href="#!" className="table-action" data-toggle="tooltip" data-original-title="Edit product">
@@ -399,4 +432,4 @@ type State = {
     alert: any
 }
 
-export default Tables;
+export default TableKhachHang;
