@@ -44,7 +44,7 @@ class TableChucVu extends Component<Props, State> {
         this.setState({
             alert: <ReactBSAlert
                 success
-                style={{ display: "block", marginTop: "110px" }}
+                style={{ display: "flex", alignItems: "center", justifyContent: "center"}}
                 title="Thành Công"
                 onConfirm={() => this.hideAlert()}
                 onCancel={() => this.hideAlert()}
@@ -63,7 +63,7 @@ class TableChucVu extends Component<Props, State> {
             alert: (
                 <ReactBSAlert
                     warning
-                    style={{ display: "block", marginTop: "110px" }}
+                    style={{ display: "flex", alignItems: "center", justifyContent: "center"}}
                     title="Cảnh báo"
                     onConfirm={() => this.hideAlert()}
                     onCancel={() => this.hideAlert()}

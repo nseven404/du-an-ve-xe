@@ -6,6 +6,7 @@ import RecentActorsIcon from '@material-ui/icons/RecentActors';
 import CommuteIcon from '@material-ui/icons/Commute';
 import DirectionsBusIcon from '@material-ui/icons/DirectionsBus';
 import GroupAddIcon from '@material-ui/icons/GroupAdd';
+import EventSeatIcon from '@material-ui/icons/EventSeat';
 
 class Sidebar extends Component<Props, State> {
   constructor(props: any) {
@@ -119,6 +120,12 @@ class Sidebar extends Component<Props, State> {
                   <a className="nav-link collapsed" href="/quan-ly-khach-hang">
                     <GroupAddIcon className="text-pink" style={{ fontSize: "18px" }} />
                     <span className="nav-link-text" style={{ marginLeft: "22px",fontSize: !this.state.hiddenSideNavContent?"12px": "0px" }}>Quản lý khách hàng</span>
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link collapsed" href="/quan-ly-ghe">
+                    <EventSeatIcon className="text-gray" style={{ fontSize: "18px" }} />
+                    <span className="nav-link-text" style={{ marginLeft: "22px",fontSize: !this.state.hiddenSideNavContent?"12px": "0px" }}>Quản lý ghế</span>
                   </a>
                 </li>
               </ul>

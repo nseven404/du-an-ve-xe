@@ -16,6 +16,7 @@ import LoaiXe from './pages/LoaiXe';
 import Xe from './pages/Xe';
 import SettingsNhanVien from './pages/SettingsNhanVien';
 import KhachHang from './pages/KhachHang';
+import Ghe from './pages/Ghe';
 
 function App() {
   return (
@@ -25,6 +26,9 @@ function App() {
           <Switch>
             <Route path="/settings">
               <SettingsNhanVien/>
+            </Route>
+            <Route path="/quan-ly-ghe">
+              <Ghe />
             </Route>
             <Route path="/quan-ly-khach-hang">
               <KhachHang />

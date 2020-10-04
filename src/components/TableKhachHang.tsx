@@ -15,6 +15,7 @@ import CalendarTodayIcon from '@material-ui/icons/CalendarToday';
 import RecentActorsIcon from '@material-ui/icons/RecentActors';
 import AddIcon from '@material-ui/icons/Add';
 import AlternateEmailIcon from '@material-ui/icons/AlternateEmail';
+import WcIcon from '@material-ui/icons/Wc';
 
 class TableKhachHang extends Component<Props, State> {
     constructor(props: any) {
@@ -49,7 +50,7 @@ class TableKhachHang extends Component<Props, State> {
         this.setState({
             alert: <ReactBSAlert
                 success
-                style={{ display: "block", marginTop: "110px" }}
+                style={{ display: "flex", alignItems: "center", justifyContent: "center" }}
                 title="Thành Công"
                 onConfirm={() => this.hideAlert()}
                 onCancel={() => this.hideAlert()}
@@ -68,7 +69,7 @@ class TableKhachHang extends Component<Props, State> {
             alert: (
                 <ReactBSAlert
                     warning
-                    style={{ display: "block", marginTop: "110px" }}
+                    style={{ display: "flex", alignItems: "center", justifyContent: "center" }}
                     title="Cảnh báo"
                     onConfirm={() => this.hideAlert()}
                     onCancel={() => this.hideAlert()}
@@ -128,6 +129,18 @@ class TableKhachHang extends Component<Props, State> {
                                                                     <input className="form-control" placeholder="Tên khách hàng" type="text" />
                                                                 </div>
                                                             </div>
+                                                           
+                                                            <div style={{display: "flex", justifyContent: "flex-start"}} >
+                                                                <label>Giới tính:</label>
+                                                                <div className="custom-control custom-radio mr-3 ml-3">
+                                                                    <input name="custom-radio-1" className="custom-control-input" id="customRadio5" type="radio" />
+                                                                    <label className="custom-control-label" htmlFor="customRadio5">Nam</label>
+                                                                </div>
+                                                                <div className="custom-control custom-radio mr-3">
+                                                                    <input name="custom-radio-1" className="custom-control-input" id="customRadio6" type="radio" />
+                                                                    <label className="custom-control-label" htmlFor="customRadio6">Nữ</label>
+                                                                </div>
+                                                            </div>
                                                             <div className="form-group">
                                                                 <label className="float-left text-red" style={{ fontSize: "10px" }}>(*)Ngày sinh</label>
                                                                 <div className="input-group input-group-merge input-group-alternative">
@@ -162,19 +175,6 @@ class TableKhachHang extends Component<Props, State> {
                                                                         <span className="input-group-text"><BrandingWatermarkIcon /></span>
                                                                     </div>
                                                                     <input className="form-control" placeholder="CMND" type="text" />
-                                                                </div>
-                                                            </div>
-
-                                                            <div className="form-group">
-                                                                <div className="input-group input-group-merge input-group-alternative">
-                                                                    <div className="input-group-prepend">
-                                                                        <span className="input-group-text"><RecentActorsIcon /></span>
-                                                                    </div>
-                                                                    <select className="form-control" id="exampleFormControlSelect2">
-                                                                        <option>Trưởng phòng</option>
-                                                                        <option>Nhân viên</option>
-                                                                        <option>Bảo vệ</option>
-                                                                    </select>
                                                                 </div>
                                                             </div>
 
