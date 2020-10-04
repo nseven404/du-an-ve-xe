@@ -10,9 +10,9 @@ class Dashboard extends Component{
 
     render() {
         return (
-            <div >
+            <div>
                 <Sidebar></Sidebar>
-                <div className="main-content Sidebar " id="panel">
+                <div className="main-content" id="panel">
                     <NavbarDashboard></NavbarDashboard >
                     <div className="header bg-primary pb-6">
                         <div className="container-fluid">
