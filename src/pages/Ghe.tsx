@@ -3,7 +3,7 @@ import Sidebar from '../components/Sidebar';
 import FooterDashboard from '../components/FooterDashboard';
 import HeaderDashboard from '../components/HeaderDashboard';
 import NavbarDashboard from '../components/NavbarDashboard';
-import TableKhachHang from '../components/TableKhachHang';
+import AddGhe from '../components/AddGhe';
 
 class Ghe extends Component {
     render() {
@@ -18,6 +18,7 @@ class Ghe extends Component {
                         </div>
                     </div>
                     <div className="container-fluid mt--6">
+                        <AddGhe></AddGhe>
                         <FooterDashboard></FooterDashboard>
                     </div>
                 </div>

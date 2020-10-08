@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import RecentActorsIcon from '@material-ui/icons/RecentActors';
 import CommuteIcon from '@material-ui/icons/Commute';
 import DirectionsBusIcon from '@material-ui/icons/DirectionsBus';
+import WeekendIcon from '@material-ui/icons/Weekend';
+import GroupAddIcon from '@material-ui/icons/GroupAdd';
 
 class Sidebar extends Component<Props, State> {
   constructor(props: any) {
@@ -91,6 +93,18 @@ class Sidebar extends Component<Props, State> {
                   <a className="nav-link collapsed" href="/quan-ly-xe">
                     <DirectionsBusIcon className="text-info" style={{ fontSize: "18px" }} />
                     <span className="nav-link-text" style={{ marginLeft: "22px" }}>Quản lý xe</span>
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link collapsed" href="/quan-ly-khach-hang">
+                    <GroupAddIcon className="text-pink" style={{ fontSize: "18px" }} />
+                    <span className="nav-link-text" style={{ marginLeft: "22px" }}>Quản lý khách hàng</span>
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link collapsed" href="/quan-ly-ghe">
+                    <WeekendIcon className="text-indigo" style={{ fontSize: "18px" }} />
+                    <span className="nav-link-text" style={{ marginLeft: "22px" }}>Quản lý ghế</span>
                   </a>
                 </li>
               </ul>

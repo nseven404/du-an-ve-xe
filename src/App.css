@@ -24311,3 +24311,56 @@ html:not([dir='rtl']) .noUi-horizontal .noUi-handle {
 .hidden-dialog{
     display: none;
 }
+
+
+/* Custom css */
+.tangGhe{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 30px;
+    
+}
+
+.tang{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+}
+
+.danhSachGhe {
+    width: 100%;
+    background-color: gray;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 5px;
+}
+
+.danhSachGhe button{
+    width: 100%;
+    background-color: var(--lighter);
+    outline: none;
+    border: none;
+}
+
+.ghe{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    width: 30px;
+    height: 50px;
+}
+
+.ghe button{
+    width: 30px;
+    height: 50px;
+    background-color: var(--lighter);
+    outline: none;
+    border: none;
+}
+
+/* .ghe img{
+    color:white;
+} */

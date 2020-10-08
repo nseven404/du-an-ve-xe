@@ -14,6 +14,7 @@ import BrandingWatermarkIcon from '@material-ui/icons/BrandingWatermark';
 import CalendarTodayIcon from '@material-ui/icons/CalendarToday';
 import RecentActorsIcon from '@material-ui/icons/RecentActors';
 import AddIcon from '@material-ui/icons/Add';
+import Swal from 'sweetalert2'
 
 class Tables extends Component<Props, State> {
     constructor(props: any) {
@@ -34,7 +35,7 @@ class Tables extends Component<Props, State> {
     }
 
     hideModal = () => {
-        this.setState({ formModal: this.state.formModal})
+        this.setState({ formModal: this.state.formModal })
     };
 
     hideAlert = () => {
@@ -45,42 +46,86 @@ class Tables extends Component<Props, State> {
 
     // Thông báo thành công
     successAlert = () => {
-        this.setState({
-            alert: <ReactBSAlert
-                success
-                style={{display: "flex", alignItems: "center", justifyContent: "center"}}
-                title="Thành Công"
-                onConfirm={() => this.hideAlert()}
-                onCancel={() => this.hideAlert()}
-                confirmBtnBsStyle="success"
-                confirmBtnText="Ok"
-                btnSize=""
-            >
-                Thêm nhân viên thành công ...
-        </ReactBSAlert>
-        });
+        Swal.fire(
+            'Thành công!',
+            'Thêm thành công!',
+            'success'
+        )
     };
 
     // Thông báo cảnh báo
     warningAlert = () => {
         this.setState({
-          alert: (
-            <ReactBSAlert
-              warning
-              style={{display: "flex", alignItems: "center", justifyContent: "center"}}
-              title="Cảnh báo"
-              onConfirm={() => this.hideAlert()}
-              onCancel={() => this.hideAlert()}
-              confirmBtnBsStyle="warning"
-              confirmBtnText="Ok"
-              btnSize=""
-            >
-              Cảnh báo ...
-            </ReactBSAlert>
-          )
+            alert: (
+                <ReactBSAlert
+                    warning
+                    style={{ display: "flex", alignItems: "center", justifyContent: "center" }}
+                    title="Cảnh báo"
+                    onConfirm={() => this.hideAlert()}
+                    onCancel={() => this.hideAlert()}
+                    confirmBtnBsStyle="warning"
+                    confirmBtnText="Ok"
+                    btnSize=""
+                >
+                    Cảnh báo ...
+                </ReactBSAlert>
+            )
         });
-      };
+    };
 
+    // Thông báo lỗi
+    ErrorThongBao = () => {
+        Swal.fire({
+            icon: 'error',
+            title: 'Xin lỗi...',
+            text: 'Vui lòng thử lại!',
+        })
+    }
+
+    // Thông báo xác nhận xóa
+    DeleteThongBao = () => {
+        Swal.fire({
+            title: 'Bạn có chắc không?',
+            text: "Bạn sẽ không thể hoàn tác điều này",
+            icon: 'warning',
+            showCancelButton: true,
+            cancelButtonText: "Trở về",
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Có, xóa nó!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire(
+                    'Đã xóa!',
+                    'Tệp của bạn đã bị xóa.',
+                    'success'
+                )
+            }
+        })
+
+    }
+
+    // Thông báo xác nhận sửa
+    ThongBaoCanhCaoChinhSua = () => {
+        Swal.fire({
+            title: 'Bạn có chắc không?',
+            text: "Bạn sẽ không thể hoàn tác điều này",
+            icon: 'warning',
+            showCancelButton: true,
+            cancelButtonText: "Trở về",
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Có, sửa nó!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire(
+                    'Đã sửa!',
+                    'Đã sửa thành công.',
+                    'success'
+                )
+            }
+        })
+    }
 
     render() {
         return (
@@ -162,9 +207,9 @@ class Tables extends Component<Props, State> {
                                                                 </div>
                                                             </div>
 
-                                                            <div onClick = {this.hideModal} className="text-center">
-                                                            <Button color="success" onClick={this.successAlert}>Thêm</Button>
-                                                            <Button color="warning" className ="btn-warning" onClick={this.warningAlert}>Hủy</Button>
+                                                            <div onClick={this.hideModal} className="text-center">
+                                                                <Button color="success" onClick={this.successAlert}>Thêm</Button>
+                                                                <Button color="warning" className="btn-warning" onClick={this.ErrorThongBao}>Hủy</Button>
                                                             </div>
                                                         </form>
                                                     </div>
@@ -179,7 +224,7 @@ class Tables extends Component<Props, State> {
                                 </a>
                                 <div className="form-group row float-right">
                                     <div className="col-md-auto">
-                                        <input className="form-control form-control-default" type="search" placeholder= "Tìm kiếm" id="example-search-input" />
+                                        <input className="form-control form-control-default" type="search" placeholder="Tìm kiếm" id="example-search-input" />
                                     </div>
                                 </div>
                             </div>
@@ -187,7 +232,7 @@ class Tables extends Component<Props, State> {
                     </div>
                     {/* Light table */}
                     <div className="table-responsive">
-                        <table className="table align-items-center table-flush table-striped">
+                        <table className="table align-items-center table-flush table-hover">
                             <thead className="thead-light">
                                 <tr>
                                     <th scope="col" className="sort" data-sort="name">Ảnh & Tên</th>
@@ -223,10 +268,10 @@ class Tables extends Component<Props, State> {
                                     </td>
                                     <td className="table-actions">
                                         <a href="#!" className="table-action" data-toggle="tooltip" data-original-title="Edit product">
-                                            <EditIcon />
+                                            <EditIcon onClick={this.ThongBaoCanhCaoChinhSua}/>
                                         </a>
                                         <a href="#!" className="table-action table-action-delete" data-toggle="tooltip" data-original-title="Delete product">
-                                            <DeleteIcon />
+                                            <DeleteIcon onClick={this.DeleteThongBao} />
                                         </a>
                                     </td>
                                 </tr>
