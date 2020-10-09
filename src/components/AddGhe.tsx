@@ -19,7 +19,7 @@ class AddGhe extends Component {
                                 <span className="btn-inner--text">Thêm tầng</span>
                             </button>
 
-                            <button className="btn btn-sm btn-primary btn-round btn-icon" data-toggle="tooltip" data-original-title="Edit product" >
+                            <button className="btn btn-sm btn-warning btn-round btn-icon" data-toggle="tooltip" data-original-title="Edit product" >
                                 <span className="btn-inner--icon"><DeleteIcon /></span>
                                 <span className="btn-inner--text">Xóa tầng</span>
                             </button>
@@ -36,7 +36,7 @@ class AddGhe extends Component {
                         <div className="tangGhe">
 
                             <div className="tang">
-                                <div className="text-center">
+                                <div className="text-center text-white">
                                     <span>Tầng 1</span>
                                 </div>
                                 <div className="danhSachGhe">
@@ -50,42 +50,42 @@ class AddGhe extends Component {
                                     </div>
 
                                     <div className="ghe">
-                                        <button>+</button>
+                                        <button className="btn-primary btn-round">+</button>
                                     </div>
                                     <div className="ghe">
-                                        <button>+</button>
+                                        <button className="btn-primary btn-round">+</button>
                                     </div>
                                     <div className="ghe">
-                                        <button>+</button>
+                                        <button className="btn-primary btn-round">+</button>
                                     </div>
                                     <div className="ghe">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="50" viewBox="0 0 28 44"><g fill="#fff" stroke="#000" stroke-width=".5"><g><rect width="28" height="44" rx="4" stroke="none"></rect><rect x=".25" y=".25" width="27.5" height="43.5" rx="3.75" fill="none"></rect></g><g transform="translate(2)"><rect width="24" height="34" rx="2" stroke="none"></rect><rect x=".25" y=".25" width="23.5" height="33.5" rx="1.75" fill="none"></rect></g><g transform="translate(6 36)"><rect width="16" height="8" rx="2" stroke="none"></rect><rect x=".25" y=".25" width="15.5" height="7.5" rx="1.75" fill="none"></rect></g></g></svg>
                                     </div>
                                 </div>
                                 <div className="danhSachGhe">
-                                <div className="ghe">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="50" viewBox="0 0 28 44"><g fill="#fff" stroke="#000" stroke-width=".5"><g><rect width="28" height="44" rx="4" stroke="none"></rect><rect x=".25" y=".25" width="27.5" height="43.5" rx="3.75" fill="none"></rect></g><g transform="translate(2)"><rect width="24" height="34" rx="2" stroke="none"></rect><rect x=".25" y=".25" width="23.5" height="33.5" rx="1.75" fill="none"></rect></g><g transform="translate(6 36)"><rect width="16" height="8" rx="2" stroke="none"></rect><rect x=".25" y=".25" width="15.5" height="7.5" rx="1.75" fill="none"></rect></g></g></svg>
+                                    <div className="ghe">
+                                        <button className="btn-primary btn-round">+</button>
                                     </div>
                                     <div className="ghe">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="50" viewBox="0 0 28 44"><g fill="#fff" stroke="#000" stroke-width=".5"><g><rect width="28" height="44" rx="4" stroke="none"></rect><rect x=".25" y=".25" width="27.5" height="43.5" rx="3.75" fill="none"></rect></g><g transform="translate(2)"><rect width="24" height="34" rx="2" stroke="none"></rect><rect x=".25" y=".25" width="23.5" height="33.5" rx="1.75" fill="none"></rect></g><g transform="translate(6 36)"><rect width="16" height="8" rx="2" stroke="none"></rect><rect x=".25" y=".25" width="15.5" height="7.5" rx="1.75" fill="none"></rect></g></g></svg>
+                                        <button className="btn-primary btn-round">+</button>
                                     </div>
                                     <div className="ghe">
-                                        <button>+</button>
+                                        <button className="btn-primary btn-round">+</button>
                                     </div>
                                     <div className="ghe">
-                                        <button>+</button>
+                                        <button className="btn-primary btn-round">+</button>
                                     </div>
                                     <div className="ghe">
-                                        <button>+</button>
+                                        <button className="btn-primary btn-round">+</button>
                                     </div>
                                 </div>
                                 <div className="danhSachGhe">
-                                    <button>Thêm hàng</button>
+                                    <button className="btn btn-sm btn-primary btn-round">THÊM HÀNG</button>
                                 </div>
 
                             </div>
                             <div className="tang">
-                                <div className="text-center">
+                                <div className="text-center text-white">
                                     <span>Tầng 2</span>
                                 </div>
                                 <div className="danhSachGhe">

@@ -16382,7 +16382,7 @@ a.btn-icon-only {
     height: calc(.45em + 1.25rem + 5px);
 }
 
-.form-control-default{
+.form-control-default {
     height: calc(.45em + 1.25rem + 9px);
 }
 
@@ -16707,6 +16707,7 @@ textarea[resize='horizontal'] {
     font-size: 3.25rem;
 }
 
+
 /* .icon-lg+.icon-text {
     width: calc(100% - $icon-size-lg - 1);
 } */
@@ -16721,6 +16722,7 @@ textarea[resize='horizontal'] {
     font-size: 1.25rem;
 }
 
+
 /* .icon-sm+.icon-text {
     width: calc(100% - $icon-size-sm - 1);
 } */
@@ -16734,6 +16736,7 @@ textarea[resize='horizontal'] {
 .icon-xs svg {
     font-size: .5rem;
 }
+
 
 /* .icon-xs+.icon-text {
     width: calc(100% - $icon-size-xs - 1);
@@ -17694,7 +17697,6 @@ textarea[resize='horizontal'] {
     min-width: 2rem;
 }
 
-
 .navbar-vertical .navbar-nav .nav-link .dropdown-menu {
     border: none;
 }
@@ -18453,7 +18455,6 @@ textarea[resize='horizontal'] {
 
 .sidenav-toggler.active .sidenav-toggler-inner:before {
     transform: scale(1);
-    
 }
 
 .sidenav-toggler.active .sidenav-toggler-line:first-child {
@@ -22088,6 +22089,7 @@ table.dataTable tbody>tr.selected {
     }
 }
 
+
 /* [data-calendar-month='0'] {
     background-image: url('../img/calendar/january.jpg');
 }
@@ -24304,48 +24306,50 @@ html:not([dir='rtl']) .noUi-horizontal .noUi-handle {
     max-width: 200px;
 }
 
-.show-dialog{
+.show-dialog {
     display: block;
 }
 
-.hidden-dialog{
+.hidden-dialog {
     display: none;
 }
 
 
 /* Custom css */
-.tangGhe{
+
+.tangGhe {
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     margin-top: 30px;
-    
 }
 
-.tang{
+.tang {
     width: 20%;
     display: flex;
     flex-direction: column;
+    background-color: gray;
+    border-radius: 25px 25px 5px 5px;
 }
 
 .danhSachGhe {
     width: 100%;
-    background-color: gray;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     padding: 5px;
 }
 
-.danhSachGhe button{
+.danhSachGhe button {
     width: 100%;
-    background-color: var(--lighter);
+    height: 50px;
+    /* background-color: var(--lighter); */
     outline: none;
     border: none;
 }
 
-.ghe{
+.ghe {
     display: flex;
     justify-content: space-evenly;
     flex-direction: row;
@@ -24353,14 +24357,43 @@ html:not([dir='rtl']) .noUi-horizontal .noUi-handle {
     height: 50px;
 }
 
-.ghe button{
+.ghe button {
     width: 30px;
     height: 50px;
-    background-color: var(--lighter);
+    /* background-color: var(--lighter); */
     outline: none;
     border: none;
+    border-radius: 5px;
 }
+
 
 /* .ghe img{
     color:white;
 } */
+
+.khungTimVe {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.khungError {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.khungError img {
+    width: 100%;
+}
+
+.contentError {
+    font-size: 20px;
+    margin-bottom: 24px;
+    font-weight: 500;
+}
+
+.contentThongTin {
+    white-space: pre-line;
+}

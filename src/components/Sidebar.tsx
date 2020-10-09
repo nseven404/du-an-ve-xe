@@ -7,6 +7,7 @@ import CommuteIcon from '@material-ui/icons/Commute';
 import DirectionsBusIcon from '@material-ui/icons/DirectionsBus';
 import WeekendIcon from '@material-ui/icons/Weekend';
 import GroupAddIcon from '@material-ui/icons/GroupAdd';
+import FeaturedPlayListIcon from '@material-ui/icons/FeaturedPlayList';
 
 class Sidebar extends Component<Props, State> {
   constructor(props: any) {
@@ -105,6 +106,12 @@ class Sidebar extends Component<Props, State> {
                   <a className="nav-link collapsed" href="/quan-ly-ghe">
                     <WeekendIcon className="text-indigo" style={{ fontSize: "18px" }} />
                     <span className="nav-link-text" style={{ marginLeft: "22px" }}>Quản lý ghế</span>
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link collapsed" href="/quan-ly-ve">
+                    <FeaturedPlayListIcon className="text-orange" style={{ fontSize: "18px" }} />
+                    <span className="nav-link-text" style={{ marginLeft: "22px" }}>Quản lý vé</span>
                   </a>
                 </li>
               </ul>
