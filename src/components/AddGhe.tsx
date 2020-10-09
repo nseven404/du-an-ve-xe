@@ -36,7 +36,7 @@ class AddGhe extends Component {
                         <div className="tangGhe">
 
                             <div className="tang">
-                                <div className="text-center text-white">
+                                <div className="text-center text-gray-dark">
                                     <span>Tầng 1</span>
                                 </div>
                                 <div className="danhSachGhe">
@@ -85,7 +85,7 @@ class AddGhe extends Component {
 
                             </div>
                             <div className="tang">
-                                <div className="text-center text-white">
+                                <div className="text-center text-gray-dark">
                                     <span>Tầng 2</span>
                                 </div>
                                 <div className="danhSachGhe">

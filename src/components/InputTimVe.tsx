@@ -23,7 +23,7 @@ class InputTimVe extends Component {
 
         return (
             <div className="khungTimVe">
-                <div className="col-3">
+                <div >
                     <Autocomplete className="form-group"
                         id="grouped-demo"
                         size="medium"
@@ -41,7 +41,7 @@ class InputTimVe extends Component {
                         }
                     />
                 </div>
-                <div className="col-3">
+                <div >
                     <Autocomplete
                         options={options.sort((a, b) => -b.firstLetter.localeCompare(a.firstLetter))}
                         groupBy={(option) => option.firstLetter}
@@ -59,8 +59,8 @@ class InputTimVe extends Component {
                 <div className="col-2">
                     <input className="form-control" type="date" id="example-date-input" />
                 </div>
-                <div className="col-3">
-                    <button type="button" className="btn button-medium btn-success">TÌM VÉ</button>
+                <div >
+                    <button style={{height: 46}} type="button" className="btn btn-success">TÌM VÉ</button>
                 </div>
             </div>
         );

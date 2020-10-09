@@ -5,6 +5,8 @@ import HeaderDashboard from '../components/HeaderDashboard';
 import NavbarDashboard from '../components/NavbarDashboard';
 import InputTimVe from '../components/InputTimVe';
 import ErrorKhongGhe from '../components/ErrorKhongGhe';
+import FillterVe from '../components/FillterVe';
+import DanhSachVe from '../components/DanhSachVe';
 class Ve extends Component {
     render() {
         return (
@@ -19,7 +21,10 @@ class Ve extends Component {
                     </div>
                     <div className="container-fluid mt--6">
                         <InputTimVe></InputTimVe>
-                        <ErrorKhongGhe></ErrorKhongGhe>
+                        <div className="rowVe">
+                            <FillterVe></FillterVe>
+                            <DanhSachVe></DanhSachVe>
+                        </div>
                         <FooterDashboard></FooterDashboard>
                     </div>
                 </div>
