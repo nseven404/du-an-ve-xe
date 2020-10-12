@@ -24406,13 +24406,16 @@ html:not([dir='rtl']) .noUi-horizontal .noUi-handle {
 }
 
 .fillterVe {
-    width: 23%;
+    width: 21%;
     background-color: white;
 }
 
 .columnVe {
-    width: 75%;
+    width: 78%;
     background-color: white;
+    border: 1px solid rgb(192, 192, 192);
+    border-radius: .375rem;
+    padding: 16px;
 }
 
 .listFillter {
@@ -24442,9 +24445,10 @@ html:not([dir='rtl']) .noUi-horizontal .noUi-handle {
     vertical-align: middle;
 }
 
-.sort {
+.sortVe {
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 
 .groupButton {
@@ -24453,4 +24457,301 @@ html:not([dir='rtl']) .noUi-horizontal .noUi-handle {
     justify-content: space-evenly;
     align-items: center;
     margin-left: 40px;
+}
+
+.khungThongTinVe {
+    position: relative;
+    padding: 16px;
+    border-radius: 4px;
+    border: 1px solid rgb(192, 192, 192);
+    margin-bottom: 16px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) 0s;
+}
+
+.khungThongTinVe:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.containerKhung {
+    min-height: 150px;
+}
+
+.thongTinChung {
+    display: flex;
+}
+
+.thongTinChung .khungAnhXe {
+    width: 223px;
+    height: 150px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin-right: 16px;
+    border-radius: 4px;
+    position: relative;
+}
+
+.thongTinChung .khungAnhXe .imagesXe {
+    height: 100%;
+    width: 100%;
+    object-position: center center;
+    object-fit: cover;
+}
+
+.thongTinChung .khungAnhXe img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    border-radius: .375rem;
+}
+
+.full-trip {
+    margin-top: 12px;
+    font-style: italic;
+    font-size: 14px;
+}
+
+.full-trip span {
+    color: red;
+    padding-right: 8px;
+}
+
+.khungThongTinXe {
+    position: relative;
+    width: calc(100% - 150px);
+    min-height: 150px;
+}
+
+.khungTitleXe {
+    color: rgb(72, 72, 72);
+    font-size: 14px;
+}
+
+.bus-info {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.bus-name {
+    font-size: 16px;
+    color: rgb(72, 72, 72);
+    font-weight: bold;
+}
+
+.seat-type {
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.from-to {
+    bottom: 0px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    color: rgb(112, 112, 112);
+}
+
+.iconTienTrinh {
+    height: 74px;
+    width: 12px;
+}
+
+.from-to-content {
+    margin-left: 9px;
+    position: relative;
+    height: 74px;
+}
+
+.from-to-content .from {
+    position: absolute;
+    top: 0px;
+}
+
+.from-to-content .content {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    line-height: 20px;
+}
+
+.from-to-content .duration {
+    position: absolute;
+    top: 26px;
+    font-size: 14px;
+}
+
+.from-to-content .to {
+    position: absolute;
+    bottom: 2px;
+}
+
+.from-to-content .from .hour {
+    color: rgb(72, 72, 72);
+}
+
+.from-to-content .content .hour {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.from-to-content .hour {
+    font-size: 20px;
+    margin-right: 4px;
+}
+
+.from-to-content .from .place {
+    width: auto;
+    color: rgb(72, 72, 72);
+}
+
+.from-to-content .content .place {
+    font-size: 16px;
+    width: auto;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.giaTien {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.fare {
+    display: flex;
+    font-size: 20px;
+    color: var(--primary);
+    -webkit-box-align: baseline;
+    align-items: baseline;
+    font-weight: bold;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+    margin-bottom: 4px;
+}
+
+.khungChoTrong {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+}
+
+.khungChoTrong .info {
+    margin-bottom: 8px;
+}
+
+.khungChoTrong .info .choTrong {
+    text-align: right;
+    font-size: 16px;
+    color: rgb(72, 72, 72);
+    margin-bottom: 8px;
+}
+
+.khungChoTrong .info .choTrong .action {
+    display: flex;
+    align-items: flex-end;
+}
+
+#step {
+    border-top: 1px solid rgb(192, 192, 192);
+    margin-top: 16px;
+}
+
+.footer-thanhToan {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.footer-right {
+    display: flex;
+    align-items: center;
+}
+
+.footer-total {
+    display: inline;
+    color: rgb(0, 96, 196);
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+.khungDonTra {
+    padding: 20px 0px;
+    min-height: 440px;
+    display: flex;
+    align-items: center;
+}
+
+.khungDiem {
+    height: 440px;
+    display: flex;
+    border-top: 1px solid rgb(192, 192, 192);
+    border-bottom: 1px solid rgb(192, 192, 192);
+}
+
+.diemDon {
+    padding: 12px 0px 0px;
+    color: rgb(77, 77, 77);
+    height: 100%;
+    width: 50%;
+    display: inline-block;
+}
+
+.khungDiem .label {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.khungDiem .groupsItem {
+    width: 100%;
+    /* height: calc(100% - 44px); */
+    overflow: hidden auto;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.timeAndDiaDiem {
+    padding-right: 8px;
+    padding-left: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.diaDiem {
+    padding: 5px;
+    color: var(--primary);
+}
+
+.khungDiem .diaChiRo {
+    padding-left: 60px;
+    font-size: 12px;
+}
+
+.khungDiem .colum {
+    height: calc(100% - 48px);
+    width: 1px;
+    background: rgb(192, 192, 192);
+    margin: 0px 13px;
+    align-self: flex-end;
+}
+
+.thongTinKhachHang {
+    width: 100%;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center; */
+    border-top: 1px solid rgb(192, 192, 192);
+    border-bottom: 1px solid rgb(192, 192, 192);
+}
+
+.thongTinKhachHang .thongTin {
+    width: 50%;
+    margin: 0 auto;
 }

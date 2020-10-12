@@ -23,7 +23,29 @@ class Ve extends Component {
                         <InputTimVe></InputTimVe>
                         <div className="rowVe">
                             <FillterVe></FillterVe>
-                            <DanhSachVe></DanhSachVe>
+                            <div className="columnVe mt-4">
+                                <div>
+                                    <h3>Vé xe từ Hà Nội đi Quảng Ninh: 1976 chuyến</h3>
+                                </div>
+                                <div className="sortVe">
+                                    <span style={{fontSize: "14px"}} className="font-weight-500">Sắp xếp theo:</span>
+                                    <div className="groupButton">
+                                        <button type="button" className="btn btn-sm btn-outline-primary">
+                                            <span>Giờ sớm nhất</span>
+                                        </button>
+                                        <button type="button" className="btn btn-sm btn-outline-primary">
+                                            <span>Muộn nhất</span>
+                                        </button>
+                                        <button type="button" className="btn btn-sm btn-outline-primary">
+                                            <span>Giá thấp nhất</span>
+                                        </button>
+                                        <button type="button" className="btn btn-sm btn-outline-primary">
+                                            <span>Giá cao nhất</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <DanhSachVe></DanhSachVe>
+                            </div>
                         </div>
                         <FooterDashboard></FooterDashboard>
                     </div>
