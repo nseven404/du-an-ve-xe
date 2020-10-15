@@ -18,6 +18,7 @@ import SettingsNhanVien from './pages/SettingsNhanVien';
 import KhachHang from './pages/KhachHang';
 import Ghe from './pages/Ghe';
 import Ve from './pages/Ve';
+import HorizontalLinearStepper from './components/StepperVe';
 
 function App() {
   return (
@@ -25,6 +26,9 @@ function App() {
       <Router>
         <div>
           <Switch>
+          {/* <Route path="/steper">
+              <HorizontalLinearStepper/>
+            </Route> */}
             <Route path="/settings">
               <SettingsNhanVien/>
             </Route>

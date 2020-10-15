@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import HorizontalLinearStepper from '../components/StepperVe';
 import StepperVe from '../components/StepperVe';
 // ReactDOM.render(<StepperVe/>, document.querySelector('#step'));
 class DanhSachVe extends Component<Props, State> {
@@ -12,12 +13,12 @@ class DanhSachVe extends Component<Props, State> {
     }
 
     openStepper = () => {
-        this.setState({openDatVe: true });
+        this.setState({ openDatVe: true });
         console.log(this.state.openDatVe);
     };
 
     closeStepper = () => {
-        this.setState({ openDatVe: true });
+        this.setState({ openDatVe: false });
         console.log(this.state.openDatVe);
     };
 
@@ -76,7 +77,7 @@ class DanhSachVe extends Component<Props, State> {
                                             38 chỗ trống
                                         </div>
                                         <div className="action">
-                                            <button  type="button" className="btn btn-success ">Đặt vé</button>
+                                            <button type="button" className="btn btn-success ">Đặt vé</button>
                                         </div>
                                     </div>
                                 </div>
@@ -89,7 +90,7 @@ class DanhSachVe extends Component<Props, State> {
                     </div>
 
                     <div id="step">
-
+                        <HorizontalLinearStepper></HorizontalLinearStepper>
                     </div>
 
                 </div>
