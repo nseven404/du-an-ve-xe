@@ -155,13 +155,11 @@ class Tables extends Component<Props, State> {
                                                         </div>
                                                         <form role="form">
                                                             <div className="form-group">
-                                                                <div className="form-group">
-                                                                    <label className="form-control-label float-left" htmlFor="validationCustom03">Ảnh nhân viên</label>
-                                                                    <input type="text" className="form-control" id="validationCustom03" placeholder="Ảnh nhân viên" required />
-                                                                    <div className="invalid-feedback">
-                                                                        Validate
+                                                                <label className="form-control-label float-left" htmlFor="validationCustom03">Ảnh nhân viên</label>
+                                                                <input type="text" className="form-control" id="validationCustom03" placeholder="Ảnh nhân viên" required />
+                                                                <div className="invalid-feedback">
+                                                                    Validate
                                                                     </div>
-                                                                </div>
                                                             </div>
                                                             <div className="form-group">
                                                                 <label className="form-control-label float-left" htmlFor="validationCustom03">Tên nhân viên</label>
