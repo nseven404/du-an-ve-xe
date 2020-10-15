@@ -151,59 +151,57 @@ class Tables extends Component<Props, State> {
                                                 <div className="card bg-secondary border-0 mb-0">
                                                     <div className="card-body px-lg-5 py-lg-5">
                                                         <div className="text-center text-muted mb-4">
-                                                            <small>Thêm nhân viên</small>
+                                                            <h3>THÊM NHÂN VIÊN</h3>
                                                         </div>
                                                         <form role="form">
-                                                            <div className="form-group mb-3">
-                                                                <div className="input-group input-group-merge input-group-alternative">
-                                                                    <div className="input-group-prepend">
-                                                                        <span className="input-group-text"><ImageIcon /></span>
+                                                            <div className="form-group">
+                                                                <div className="form-group">
+                                                                    <label className="form-control-label float-left" htmlFor="validationCustom03">Ảnh nhân viên</label>
+                                                                    <input type="text" className="form-control" id="validationCustom03" placeholder="Ảnh nhân viên" required />
+                                                                    <div className="invalid-feedback">
+                                                                        Validate
                                                                     </div>
-                                                                    <input className="form-control" placeholder="Ảnh nhân viên" type="url" />
                                                                 </div>
                                                             </div>
                                                             <div className="form-group">
-                                                                <div className="input-group input-group-merge input-group-alternative">
-                                                                    <div className="input-group-prepend">
-                                                                        <span className="input-group-text"><FaceIcon /></span>
-                                                                    </div>
-                                                                    <input className="form-control" placeholder="Tên nhân viên" type="text" />
+                                                                <label className="form-control-label float-left" htmlFor="validationCustom03">Tên nhân viên</label>
+                                                                <input type="text" className="form-control" id="validationCustom03" placeholder="Tên nhân viên" required />
+                                                                <div className="invalid-feedback">
+                                                                    Validate
                                                                 </div>
                                                             </div>
                                                             <div className="form-group">
-                                                                <div className="input-group input-group-merge input-group-alternative">
-                                                                    <div className="input-group-prepend">
-                                                                        <span className="input-group-text"><PhoneIcon /></span>
-                                                                    </div>
-                                                                    <input className="form-control" placeholder="Số điện thoại" type="text" />
+                                                                <label className="form-control-label float-left" htmlFor="validationCustom03">Số điện thoại</label>
+                                                                <input type="text" className="form-control" id="validationCustom03" placeholder="+84" required />
+                                                                <div className="invalid-feedback">
+                                                                    Validate
                                                                 </div>
                                                             </div>
                                                             <div className="form-group">
-                                                                <div className="input-group input-group-merge input-group-alternative">
-                                                                    <div className="input-group-prepend">
-                                                                        <span className="input-group-text"><BrandingWatermarkIcon /></span>
-                                                                    </div>
-                                                                    <input className="form-control" placeholder="CMND" type="text" />
+                                                                <label className="form-control-label float-left" htmlFor="validationCustom03">CMND</label>
+                                                                <input type="text" className="form-control" id="validationCustom03" placeholder="123456789" required />
+                                                                <div className="invalid-feedback">
+                                                                    Validate
                                                                 </div>
                                                             </div>
                                                             <div className="form-group">
-                                                                <div className="input-group input-group-merge input-group-alternative">
-                                                                    <div className="input-group-prepend">
-                                                                        <span className="input-group-text"><CalendarTodayIcon /></span>
-                                                                    </div>
-                                                                    <input className="form-control" type="date" id="example-date-input" />
+                                                                <label className="form-control-label float-left" htmlFor="validationCustom03">Ngày sinh</label>
+                                                                <input type="date" className="form-control" id="validationCustom03" placeholder="01/01/1998" required />
+                                                                <div className="invalid-feedback">
+                                                                    Validate
                                                                 </div>
                                                             </div>
                                                             <div className="form-group">
+                                                                <label className="form-control-label float-left" htmlFor="validationCustom03">Chức vụ</label>
                                                                 <div className="input-group input-group-merge input-group-alternative">
-                                                                    <div className="input-group-prepend">
-                                                                        <span className="input-group-text"><RecentActorsIcon /></span>
-                                                                    </div>
                                                                     <select className="form-control" id="exampleFormControlSelect2">
                                                                         <option>Trưởng phòng</option>
                                                                         <option>Nhân viên</option>
                                                                         <option>Bảo vệ</option>
                                                                     </select>
+                                                                </div>
+                                                                <div className="invalid-feedback">
+                                                                    Validate
                                                                 </div>
                                                             </div>
 
@@ -268,7 +266,7 @@ class Tables extends Component<Props, State> {
                                     </td>
                                     <td className="table-actions">
                                         <a href="#!" className="table-action" data-toggle="tooltip" data-original-title="Edit product">
-                                            <EditIcon onClick={this.ThongBaoCanhCaoChinhSua}/>
+                                            <EditIcon onClick={this.ThongBaoCanhCaoChinhSua} />
                                         </a>
                                         <a href="#!" className="table-action table-action-delete" data-toggle="tooltip" data-original-title="Delete product">
                                             <DeleteIcon onClick={this.DeleteThongBao} />
