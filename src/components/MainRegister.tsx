@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import FaceIcon from '@material-ui/icons/Face';
 import EmailIcon from '@material-ui/icons/Email';
 import LockOpenIcon from '@material-ui/icons/LockOpen';
@@ -36,11 +37,11 @@ class MainRegister extends Component {
                                     <div className="text-muted text-center mt-2 mb-4"><small>Đăng nhập với</small></div>
                                     <div className="text-center">
                                         <a href="#" className="btn btn-neutral btn-icon mr-4">
-                                        <span className="btn-inner--icon"><img src={require("./images/facebook.svg")} alt=""/></span>
+                                            <span className="btn-inner--icon"><img src={require("./images/facebook.svg")} alt="" /></span>
                                             <span className="btn-inner--text">Facebook</span>
                                         </a>
                                         <a href="#" className="btn btn-neutral btn-icon">
-                                        <span className="btn-inner--icon"><img src={require("./images/google.svg")} alt=""/></span>
+                                            <span className="btn-inner--icon"><img src={require("./images/google.svg")} alt="" /></span>
                                             <span className="btn-inner--text">Google</span>
                                         </a>
                                     </div>
@@ -53,7 +54,7 @@ class MainRegister extends Component {
                                         <div className="form-group">
                                             <div className="input-group input-group-merge input-group-alternative mb-3">
                                                 <div className="input-group-prepend">
-                                                    <span className="input-group-text"><FaceIcon style = {{fontSize: "18px"}}/></span>
+                                                    <span className="input-group-text"><FaceIcon style={{ fontSize: "18px" }} /></span>
                                                 </div>
                                                 <input className="form-control" placeholder="Tên" type="text" />
                                             </div>
@@ -61,7 +62,7 @@ class MainRegister extends Component {
                                         <div className="form-group">
                                             <div className="input-group input-group-merge input-group-alternative mb-3">
                                                 <div className="input-group-prepend">
-                                                    <span className="input-group-text"><EmailIcon style = {{fontSize: "18px"}}/></span>
+                                                    <span className="input-group-text"><EmailIcon style={{ fontSize: "18px" }} /></span>
                                                 </div>
                                                 <input className="form-control" placeholder="Email" type="email" />
                                             </div>
@@ -69,7 +70,7 @@ class MainRegister extends Component {
                                         <div className="form-group">
                                             <div className="input-group input-group-merge input-group-alternative">
                                                 <div className="input-group-prepend">
-                                                    <span className="input-group-text"><LockOpenIcon style = {{fontSize: "18px"}}/></span>
+                                                    <span className="input-group-text"><LockOpenIcon style={{ fontSize: "18px" }} /></span>
                                                 </div>
                                                 <input className="form-control" placeholder="Mật khẩu" type="password" />
                                             </div>
@@ -77,7 +78,7 @@ class MainRegister extends Component {
                                         <div className="form-group">
                                             <div className="input-group input-group-merge input-group-alternative">
                                                 <div className="input-group-prepend">
-                                                    <span className="input-group-text"><LockOpenIcon style = {{fontSize: "18px"}}/></span>
+                                                    <span className="input-group-text"><LockOpenIcon style={{ fontSize: "18px" }} /></span>
                                                 </div>
                                                 <input className="form-control" placeholder="Nhập lại mật khẩu" type="password" />
                                             </div>
@@ -94,7 +95,11 @@ class MainRegister extends Component {
                                             </div>
                                         </div>
                                         <div className="text-center">
-                                            <button type="button" className="btn btn-primary mt-4">Tạo tài khoản</button>
+                                            <Link className="text-light" to="/dang-nhap">
+                                                <button type="button" className="btn btn-primary mt-4">
+                                                    Tạo tài khoản
+                                                </button>
+                                            </Link>
                                         </div>
                                     </form>
                                 </div>

@@ -156,36 +156,36 @@ class Tables extends Component<Props, State> {
                                                         <form role="form">
                                                             <div className="form-group">
                                                                 <label className="form-control-label float-left" htmlFor="validationCustom03">Ảnh nhân viên</label>
-                                                                <input type="text" className="form-control" id="validationCustom03" placeholder="Ảnh nhân viên" required />
-                                                                <div className="invalid-feedback">
+                                                                <input type="text" className="form-control" id="validationCustom03" placeholder="https://www" required />
+                                                                <div className="invalid-feedback text-left">
                                                                     Validate
-                                                                    </div>
+                                                                </div>
                                                             </div>
                                                             <div className="form-group">
                                                                 <label className="form-control-label float-left" htmlFor="validationCustom03">Tên nhân viên</label>
-                                                                <input type="text" className="form-control" id="validationCustom03" placeholder="Tên nhân viên" required />
-                                                                <div className="invalid-feedback">
+                                                                <input type="text" className="form-control" id="validationCustom03" placeholder="Huỳnh Văn A" required />
+                                                                <div className="invalid-feedback text-left">
                                                                     Validate
                                                                 </div>
                                                             </div>
                                                             <div className="form-group">
                                                                 <label className="form-control-label float-left" htmlFor="validationCustom03">Số điện thoại</label>
                                                                 <input type="text" className="form-control" id="validationCustom03" placeholder="+84" required />
-                                                                <div className="invalid-feedback">
+                                                                <div className="invalid-feedback text-left">
                                                                     Validate
                                                                 </div>
                                                             </div>
                                                             <div className="form-group">
                                                                 <label className="form-control-label float-left" htmlFor="validationCustom03">CMND</label>
                                                                 <input type="text" className="form-control" id="validationCustom03" placeholder="123456789" required />
-                                                                <div className="invalid-feedback">
+                                                                <div className="invalid-feedback text-left">
                                                                     Validate
                                                                 </div>
                                                             </div>
                                                             <div className="form-group">
                                                                 <label className="form-control-label float-left" htmlFor="validationCustom03">Ngày sinh</label>
                                                                 <input type="date" className="form-control" id="validationCustom03" placeholder="01/01/1998" required />
-                                                                <div className="invalid-feedback">
+                                                                <div className="invalid-feedback text-left">
                                                                     Validate
                                                                 </div>
                                                             </div>
@@ -198,7 +198,7 @@ class Tables extends Component<Props, State> {
                                                                         <option>Bảo vệ</option>
                                                                     </select>
                                                                 </div>
-                                                                <div className="invalid-feedback">
+                                                                <div className="invalid-feedback text-left">
                                                                     Validate
                                                                 </div>
                                                             </div>
